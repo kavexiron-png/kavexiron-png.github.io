@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Portfolio demo project by Kavexiron — fictional client, built to showcase ecommerce website design skills -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Thread — Streetwear for the Concrete Generation</title>
+<meta name="description" content="Urban Thread is a streetwear label built for city life — bold graphics, premium fabrics, limited drops.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Space Grotesk', 'sans-serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          ink: '#0a0a0a',
+          bone: '#f4f2ed',
+          volt: '#d4ff3f',
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-bone text-ink font-sans antialiased">
+
+<!-- ======================= HEADER ======================= -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-bone/90 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 group">
+        <span class="font-display font-700 text-xl md:text-2xl tracking-tight">
+          URBAN<span class="text-volt bg-ink px-1.5 ml-0.5 rounded-sm group-hover:bg-ink/80 transition-colors">THREAD</span>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-wide">
+        <a href="#shop" class="nav-link">Shop</a>
+        <a href="#about" class="nav-link">Our Story</a>
+        <a href="#community" class="nav-link">Community</a>
+        <a href="#newsletter" class="nav-link">Join</a>
+      </nav>
+
+      <!-- Right side: cart + mobile toggle -->
+      <div class="flex items-center gap-4">
+        <button id="cart-btn" aria-label="View cart" class="relative p-2 rounded-full hover:bg-ink/5 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cart-badge" class="absolute -top-1 -right-1 bg-volt text-ink text-[11px] font-bold rounded-full w-5 h-5 flex items-center justify-center border border-ink scale-0 transition-transform duration-300">0</span>
+        </button>
+
+        <button id="menu-toggle" aria-label="Toggle menu" class="md:hidden p-2 rounded-full hover:bg-ink/5 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile nav panel -->
+  <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 bg-bone border-t border-ink/10">
+    <nav class="flex flex-col px-5 py-4 gap-1 font-medium uppercase tracking-wide text-sm">
+      <a href="#shop" class="py-3 border-b border-ink/10 mobile-link">Shop</a>
+      <a href="#about" class="py-3 border-b border-ink/10 mobile-link">Our Story</a>
+      <a href="#community" class="py-3 border-b border-ink/10 mobile-link">Community</a>
+      <a href="#newsletter" class="py-3 mobile-link">Join</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section id="home" class="relative h-[92vh] min-h-[560px] w-full overflow-hidden flex items-end">
+  <img
+    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1600&q=80"
+    alt="Model wearing bold streetwear outfit on a city street"
+    class="absolute inset-0 w-full h-full object-cover scale-105"
+    id="hero-img"
+  >
+  <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/10"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pb-16 md:pb-24 w-full">
+    <p class="reveal text-volt font-semibold uppercase tracking-[0.3em] text-xs md:text-sm mb-4">Fall / Winter Drop 02</p>
+    <h1 class="reveal font-display font-700 text-white text-4xl sm:text-5xl md:text-7xl leading-[1.02] max-w-3xl">
+      Built for the streets.<br>Worn by the city.
+    </h1>
+    <p class="reveal mt-6 text-white/80 max-w-lg text-base md:text-lg">
+      Heavyweight fleece, oversized cuts, and graphics that don't fade. Urban Thread is streetwear made for people who move fast and stand out doing it.
+    </p>
+    <div class="reveal mt-8 flex flex-wrap gap-4">
+      <a href="#shop" class="btn-primary">Shop The Drop</a>
+      <a href="#about" class="btn-ghost">Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FEATURED COLLECTION ======================= -->
+<section id="shop" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50 mb-3">Featured Collection</p>
+      <h2 class="font-display font-700 text-3xl md:text-5xl">This Week's Heat</h2>
+    </div>
+    <p class="text-ink/60 max-w-sm text-sm md:text-base">Limited runs, restocked rarely. Grab your size before the drop sells through.</p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-7">
+
+    <!-- Product 1 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=800&q=80" alt="Heavyweight charcoal pullover hoodie" loading="lazy">
+        <span class="tag">Bestseller</span>
+      </div>
+      <div class="product-info">
+        <h3>Concrete Pullover Hoodie</h3>
+        <p class="price">$78.00</p>
+        <button class="add-to-cart" data-name="Concrete Pullover Hoodie" data-price="78.00">Add to Cart</button>
+      </div>
+    </article>
+
+    <!-- Product 2 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80" alt="Black oversized utility jacket" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h3>Midnight Utility Jacket</h3>
+        <p class="price">$142.00</p>
+        <button class="add-to-cart" data-name="Midnight Utility Jacket" data-price="142.00">Add to Cart</button>
+      </div>
+    </article>
+
+    <!-- Product 3 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Streetwear model wearing cargo pants and graphic tee" loading="lazy">
+        <span class="tag">New</span>
+      </div>
+      <div class="product-info">
+        <h3>Blockout Cargo Pants</h3>
+        <p class="price">$96.00</p>
+        <button class="add-to-cart" data-name="Blockout Cargo Pants" data-price="96.00">Add to Cart</button>
+      </div>
+    </article>
+
+    <!-- Product 4 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&q=80" alt="Pair of chunky streetwear sneakers" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h3>Pavement Low Sneaker</h3>
+        <p class="price">$118.00</p>
+        <button class="add-to-cart" data-name="Pavement Low Sneaker" data-price="118.00">Add to Cart</button>
+      </div>
+    </article>
+
+    <!-- Product 5 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80" alt="Oversized graphic t-shirt streetwear flatlay" loading="lazy">
+        <span class="tag">Limited</span>
+      </div>
+      <div class="product-info">
+        <h3>Static Graphic Tee</h3>
+        <p class="price">$42.00</p>
+        <button class="add-to-cart" data-name="Static Graphic Tee" data-price="42.00">Add to Cart</button>
+      </div>
+    </article>
+
+    <!-- Product 6 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80" alt="Model wearing cream oversized hoodie" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h3>Bone Oversized Hoodie</h3>
+        <p class="price">$82.00</p>
+        <button class="add-to-cart" data-name="Bone Oversized Hoodie" data-price="82.00">Add to Cart</button>
+      </div>
+    </article>
+
+    <!-- Product 7 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80" alt="Streetwear model in layered techwear outfit" loading="lazy">
+        <span class="tag">New</span>
+      </div>
+      <div class="product-info">
+        <h3>Transit Layer Vest</h3>
+        <p class="price">$104.00</p>
+        <button class="add-to-cart" data-name="Transit Layer Vest" data-price="104.00">Add to Cart</button>
+      </div>
+    </article>
+
+    <!-- Product 8 -->
+    <article class="product-card reveal">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=80" alt="Washed denim jacket streetwear style" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h3>Washed Denim Overshirt</h3>
+        <p class="price">$128.00</p>
+        <button class="add-to-cart" data-name="Washed Denim Overshirt" data-price="128.00">Add to Cart</button>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="reveal text-center mt-14">
+    <a href="#shop" class="btn-outline">View Full Collection</a>
+  </div>
+</section>
+
+<!-- ======================= ABOUT / BRAND STORY ======================= -->
+<section id="about" class="bg-ink text-bone py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="reveal order-2 md:order-1">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-volt mb-4">Our Story</p>
+      <h2 class="font-display font-700 text-3xl md:text-5xl leading-tight mb-6">Designed on rooftops.<br>Stitched for the block.</h2>
+      <p class="text-bone/70 mb-5 leading-relaxed">
+        Urban Thread started in 2019 out of a two-bedroom apartment above a laundromat, screen-printing tees between shifts and selling them out of a duffel bag at local shows. No investors, no focus groups — just a crew of designers, skaters, and musicians who thought streetwear had gotten boring.
+      </p>
+      <p class="text-bone/70 mb-8 leading-relaxed">
+        Today every piece is still designed in-house, cut in small batches, and tested by the same community that wears it. We work with independent mills for heavyweight cotton and recycled fibers, because longevity matters more than trend cycles. If it doesn't survive a winter on the train platform, it doesn't ship.
+      </p>
+      <div class="grid grid-cols-3 gap-6 border-t border-bone/15 pt-8">
+        <div>
+          <p class="font-display text-3xl font-700 text-volt">2019</p>
+          <p class="text-xs uppercase tracking-wide text-bone/50 mt-1">Founded</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-700 text-volt">40+</p>
+          <p class="text-xs uppercase tracking-wide text-bone/50 mt-1">Limited Drops</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-700 text-volt">30K</p>
+          <p class="text-xs uppercase tracking-wide text-bone/50 mt-1">Community</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal order-1 md:order-2">
+      <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=80" alt="Urban Thread design studio with garments and sketches" class="rounded-2xl w-full h-[380px] md:h-[520px] object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- ======================= UGC / INSTAGRAM GRID ======================= -->
+<section id="community" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="reveal text-center mb-12">
+    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-ink/50 mb-3">Worn By You</p>
+    <h2 class="font-display font-700 text-3xl md:text-5xl">#UrbanThreadFam</h2>
+    <p class="text-ink/60 mt-3">Tag us for a chance to be featured on the site and in our next lookbook.</p>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-4">
+    <a href="#" class="ugc-tile reveal"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Customer wearing Urban Thread streetwear outfit" loading="lazy"></a>
+    <a href="#" class="ugc-tile reveal"><img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=600&q=80" alt="Customer in graphic tee and cap street style" loading="lazy"></a>
+    <a href="#" class="ugc-tile reveal"><img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=600&q=80" alt="Customer wearing oversized hoodie outdoors" loading="lazy"></a>
+    <a href="#" class="ugc-tile reveal"><img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=600&q=80" alt="Customer streetwear fit check in city alley" loading="lazy"></a>
+    <a href="#" class="ugc-tile reveal"><img src="https://images.unsplash.com/photo-1507680434567-5739c80be1ac?auto=format&fit=crop&w=600&q=80" alt="Customer wearing sneakers and cargo pants" loading="lazy"></a>
+    <a href="#" class="ugc-tile reveal"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Customer in denim jacket street portrait" loading="lazy"></a>
+  </div>
+</section>
+
+<!-- ======================= NEWSLETTER ======================= -->
+<section id="newsletter" class="relative overflow-hidden bg-volt">
+  <div class="max-w-4xl mx-auto px-5 md:px-8 py-16 md:py-20 text-center relative z-10">
+    <h2 class="reveal font-display font-700 text-3xl md:text-5xl text-ink mb-4">Get First Access To Every Drop</h2>
+    <p class="reveal text-ink/70 mb-8 max-w-lg mx-auto">Join the list for early drop access, restock alerts, and 10% off your first order. No spam, just heat.</p>
+
+    <form id="newsletter-form" class="reveal flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input
+        type="email"
+        id="newsletter-email"
+        required
+        placeholder="your@email.com"
+        class="flex-1 px-5 py-3.5 rounded-full border-2 border-ink bg-bone placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-ink/40 text-ink"
+      >
+      <button type="submit" class="px-7 py-3.5 rounded-full bg-ink text-bone font-semibold hover:bg-ink/85 transition-colors whitespace-nowrap">
+        Sign Up
+      </button>
+    </form>
+    <p id="newsletter-success" class="hidden mt-5 font-semibold text-ink">✓ You're on the list — welcome to the fam.</p>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="bg-ink text-bone/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 grid grid-cols-2 md:grid-cols-5 gap-10">
+
+    <div class="col-span-2">
+      <span class="font-display font-700 text-xl text-bone">
+        URBAN<span class="text-volt bg-bone/10 px-1.5 ml-0.5 rounded-sm">THREAD</span>
+      </span>
+      <p class="mt-4 text-sm max-w-xs leading-relaxed">Streetwear designed in-house, cut in small batches, built to survive the city. Est. 2019.</p>
+
+      <div class="flex items-center gap-3 mt-6">
+        <a href="#" aria-label="Instagram" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="#" aria-label="TikTok" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+        </a>
+        <a href="#" aria-label="X / Twitter" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.9L4.4 22H1.3l8.1-9.3L1 2h7.1l4.9 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-bone font-semibold mb-4 text-sm uppercase tracking-wide">Shop</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="#shop" class="footer-link">New Arrivals</a></li>
+        <li><a href="#shop" class="footer-link">Hoodies</a></li>
+        <li><a href="#shop" class="footer-link">Outerwear</a></li>
+        <li><a href="#shop" class="footer-link">Accessories</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-bone font-semibold mb-4 text-sm uppercase tracking-wide">Support</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="#" class="footer-link">Shipping & Returns</a></li>
+        <li><a href="#" class="footer-link">Size Guide</a></li>
+        <li><a href="#" class="footer-link">Track Order</a></li>
+        <li><a href="#" class="footer-link">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-bone font-semibold mb-4 text-sm uppercase tracking-wide">Company</h4>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="#about" class="footer-link">Our Story</a></li>
+        <li><a href="#" class="footer-link">Sustainability</a></li>
+        <li><a href="#" class="footer-link">Careers</a></li>
+        <li><a href="#" class="footer-link">Press</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-bone/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>&copy; 2026 Urban Thread. All rights reserved. This is a fictional demo brand.</p>
+      <div class="flex items-center gap-3">
+        <span class="payment-badge">VISA</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">PayPal</span>
+        <span class="payment-badge">Apple Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] translate-y-24 opacity-0 transition-all duration-400 ease-out">
+  <div class="flex items-center gap-3 bg-ink text-bone px-5 py-3.5 rounded-full shadow-2xl border border-bone/10">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-volt flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
+    <span id="toast-msg" class="text-sm font-medium whitespace-nowrap">Added to cart</span>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

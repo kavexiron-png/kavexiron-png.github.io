@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Portfolio demo project by Kave Xiron — fictional product, built to showcase SaaS landing page design + conversion copywriting skills -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaunchPad — Automate Client Onboarding & Approvals for Agencies</title>
+<meta name="description" content="LaunchPad automates client onboarding, approvals, and project handoffs for agencies and freelance teams — so you spend less time chasing sign-offs and more time billing hours.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          display: ['Sora', 'Inter', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            50: '#f5f4ff',
+            100: '#ece9fe',
+            200: '#d9d4fd',
+            300: '#b8adfb',
+            400: '#9381f6',
+            500: '#6366f1',
+            600: '#5850ec',
+            700: '#4c3fd6',
+            800: '#3f34ab',
+            900: '#352f87',
+          },
+        },
+      },
+    },
+  };
+</script>
+
+<!-- Local styles (custom animations / things Tailwind utilities can't do) -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#fbfbfe] text-slate-800 antialiased">
+
+<!-- ============================= HEADER / NAV ============================= -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-18 flex items-center justify-between py-3">
+    <!-- Logo -->
+    <a href="#top" class="flex items-center gap-2 shrink-0">
+      <span class="w-8 h-8 rounded-lg bg-grad-primary flex items-center justify-center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M12 12L20 7M12 12V22M12 12L4 7" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="font-display font-bold text-lg tracking-tight text-slate-900">LaunchPad</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+      <a href="#features" class="nav-link hover:text-slate-900">Features</a>
+      <a href="#how-it-works" class="nav-link hover:text-slate-900">How It Works</a>
+      <a href="#pricing" class="nav-link hover:text-slate-900">Pricing</a>
+      <a href="#testimonials" class="nav-link hover:text-slate-900">Customers</a>
+      <a href="#faq" class="nav-link hover:text-slate-900">FAQ</a>
+    </nav>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors px-3 py-2">Log In</a>
+      <a href="#pricing" class="btn-primary text-sm font-semibold text-white px-5 py-2.5 rounded-lg">Start Free Trial</a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 -mr-2 text-slate-700">
+      <svg id="icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="icon-close" class="hidden" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden border-t border-slate-100 bg-white">
+    <div class="px-5 py-4 flex flex-col gap-1 text-sm font-medium text-slate-700">
+      <a href="#features" class="py-2.5">Features</a>
+      <a href="#how-it-works" class="py-2.5">How It Works</a>
+      <a href="#pricing" class="py-2.5">Pricing</a>
+      <a href="#testimonials" class="py-2.5">Customers</a>
+      <a href="#faq" class="py-2.5">FAQ</a>
+      <div class="flex flex-col gap-2 mt-3 pt-3 border-t border-slate-100">
+        <a href="#" class="text-center py-2.5 font-semibold text-slate-600">Log In</a>
+        <a href="#pricing" class="btn-primary text-center text-white font-semibold px-5 py-2.5 rounded-lg">Start Free Trial</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================= HERO ============================= -->
+<section class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden hero-glow">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal visible">
+      <a href="#testimonials" class="inline-flex items-center gap-2 text-xs font-semibold text-brand-700 bg-brand-50 border border-brand-100 rounded-full px-4 py-1.5 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+        Trusted by 1,200+ agencies and freelance teams
+      </a>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-bold leading-[1.08] tracking-tight text-slate-900">
+        Stop chasing client sign-offs. <span class="text-gradient">Start billing hours.</span>
+      </h1>
+      <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+        LaunchPad automates onboarding, approvals, and handoffs so your team stops living in email threads and spreadsheet trackers — and starts shipping client work on time, every time.
+      </p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="#pricing" class="btn-primary text-white font-semibold px-7 py-3.5 rounded-lg text-center">Start Free 14-Day Trial</a>
+        <a href="#how-it-works" class="btn-secondary border border-slate-300 text-slate-700 font-semibold px-7 py-3.5 rounded-lg text-center">See How It Works</a>
+      </div>
+      <p class="mt-5 text-sm text-slate-500 flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        No credit card required &nbsp;·&nbsp; Set up in under 15 minutes
+      </p>
+    </div>
+
+    <!-- Hero mockup: fake browser window with a dashboard UI -->
+    <div class="relative reveal visible" style="transition-delay:120ms">
+      <div class="mockup-window relative overflow-hidden">
+        <div class="mockup-bar flex items-center gap-1.5 px-4 py-3">
+          <span class="mockup-dot bg-red-400"></span>
+          <span class="mockup-dot bg-amber-400"></span>
+          <span class="mockup-dot bg-green-400"></span>
+          <span class="ml-4 text-xs text-slate-400 bg-white rounded-md px-3 py-1 border border-slate-200">app.launchpad.io/dashboard</span>
+        </div>
+        <div class="p-5 sm:p-6 bg-gradient-to-br from-white to-brand-50">
+          <div class="flex items-center justify-between mb-5">
+            <div class="skeleton-bar h-4 w-32"></div>
+            <div class="flex gap-2">
+              <div class="w-7 h-7 rounded-full bg-brand-200"></div>
+              <div class="w-7 h-7 rounded-full bg-indigo-300"></div>
+              <div class="w-7 h-7 rounded-full bg-purple-300"></div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="bg-white rounded-xl border border-slate-200 p-3">
+              <p class="text-[11px] font-semibold text-slate-400 mb-2">ONBOARDING</p>
+              <div class="kanban-card bg-brand-50 border border-brand-100 p-2.5 mb-2">
+                <p class="text-xs font-semibold text-slate-700">Acme Corp — Intake Form</p>
+                <div class="skeleton-bar h-1.5 w-3/4 mt-2"></div>
+              </div>
+              <div class="kanban-card bg-white border border-slate-200 p-2.5">
+                <p class="text-xs font-semibold text-slate-700">Nova Fitness — Kickoff</p>
+                <div class="skeleton-bar h-1.5 w-1/2 mt-2"></div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-3">
+              <p class="text-[11px] font-semibold text-slate-400 mb-2">PENDING APPROVAL</p>
+              <div class="kanban-card bg-amber-50 border border-amber-100 p-2.5 mb-2">
+                <p class="text-xs font-semibold text-slate-700">Homepage Mockup v3</p>
+                <div class="skeleton-bar h-1.5 w-2/3 mt-2 !bg-amber-200"></div>
+              </div>
+              <div class="kanban-card bg-white border border-slate-200 p-2.5">
+                <p class="text-xs font-semibold text-slate-700">Brand Guidelines PDF</p>
+                <div class="skeleton-bar h-1.5 w-1/3 mt-2"></div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-3">
+              <p class="text-[11px] font-semibold text-slate-400 mb-2">HANDED OFF</p>
+              <div class="kanban-card bg-emerald-50 border border-emerald-100 p-2.5 mb-2">
+                <p class="text-xs font-semibold text-slate-700">Greenline Co — Phase 1</p>
+                <div class="skeleton-bar h-1.5 w-full mt-2 !bg-emerald-200"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badges -->
+      <div class="float-badge hidden sm:flex absolute -top-6 -right-6 bg-white rounded-xl shadow-xl border border-slate-100 px-4 py-3 items-center gap-2">
+        <span class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div>
+          <p class="text-xs font-bold text-slate-900">Approval sent</p>
+          <p class="text-[11px] text-slate-500">2 min ago</p>
+        </div>
+      </div>
+      <div class="float-badge delay hidden sm:flex absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl border border-slate-100 px-4 py-3 items-center gap-2">
+        <span class="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+        </span>
+        <div>
+          <p class="text-xs font-bold text-slate-900">Time saved</p>
+          <p class="text-[11px] text-slate-500">6.5 hrs this week</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SOCIAL PROOF ============================= -->
+<section class="py-12 border-y border-slate-100 bg-white reveal">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <p class="text-center text-xs font-semibold tracking-widest text-slate-400 uppercase mb-8">Powering onboarding at agencies and studios like</p>
+    <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+      <span class="logo-wordmark text-2xl">Northfield&nbsp;&amp;&nbsp;Co.</span>
+      <span class="logo-wordmark text-2xl">Verdant Studio</span>
+      <span class="logo-wordmark text-2xl">Blackwood Digital</span>
+      <span class="logo-wordmark text-2xl">Orbit Creative</span>
+      <span class="logo-wordmark text-2xl">Fathom Media</span>
+      <span class="logo-wordmark text-2xl">Loft Nine</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= PROBLEM / SOLUTION ============================= -->
+<section class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <p class="text-sm font-semibold text-brand-600 mb-3 uppercase tracking-wide">The problem</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        Client work doesn't stall because of bad work. It stalls because of bad handoffs.
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Pain 1 -->
+      <div class="reveal rounded-2xl border border-slate-200 p-8 bg-white" style="transition-delay:0ms">
+        <span class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Onboarding lives in 6 different inboxes</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Contracts in email, intake forms in Google Docs, assets in Dropbox. Nobody — including you — knows what's actually been collected.</p>
+        <div class="mt-5 pt-5 border-t border-slate-100 flex items-start gap-3">
+          <span class="w-8 h-8 shrink-0 rounded-lg bg-emerald-50 flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p class="text-sm text-slate-700"><span class="font-semibold text-slate-900">One branded intake flow</span> collects contracts, forms, and files in a single guided sequence.</p>
+        </div>
+      </div>
+
+      <!-- Pain 2 -->
+      <div class="reveal rounded-2xl border border-slate-200 p-8 bg-white" style="transition-delay:90ms">
+        <span class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Approvals disappear into the void</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">You send a deliverable for sign-off and then... silence. No reminders, no trail, no idea if the client even opened it.</p>
+        <div class="mt-5 pt-5 border-t border-slate-100 flex items-start gap-3">
+          <span class="w-8 h-8 shrink-0 rounded-lg bg-emerald-50 flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p class="text-sm text-slate-700"><span class="font-semibold text-slate-900">Automated approval tracking</span> shows read receipts and nudges clients until they sign off.</p>
+        </div>
+      </div>
+
+      <!-- Pain 3 -->
+      <div class="reveal rounded-2xl border border-slate-200 p-8 bg-white" style="transition-delay:180ms">
+        <span class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Handoffs between teammates drop details</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">A project moves from strategy to design to dev, and every handoff loses context — leading to rework and missed requirements.</p>
+        <div class="mt-5 pt-5 border-t border-slate-100 flex items-start gap-3">
+          <span class="w-8 h-8 shrink-0 rounded-lg bg-emerald-50 flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <p class="text-sm text-slate-700"><span class="font-semibold text-slate-900">Structured handoff templates</span> carry full context automatically so nothing gets lost in transit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FEATURES ============================= -->
+<section id="features" class="py-24 md:py-32 bg-grad-soft">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <p class="text-sm font-semibold text-brand-600 mb-3 uppercase tracking-wide">Everything you need</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">One system to run every client engagement</h2>
+      <p class="mt-4 text-slate-600 text-lg">Replace the spreadsheet trackers, the "just following up" emails, and the Slack pings asking "is this approved yet?"</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+      <div class="reveal bg-white rounded-2xl p-7 border border-slate-200 hover:border-brand-200 transition-colors">
+        <span class="w-11 h-11 rounded-lg bg-brand-500 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Guided Client Onboarding</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Turn your messiest first week into a polished, branded sequence that collects contracts, payment, and assets — without a single back-and-forth email.</p>
+      </div>
+
+      <div class="reveal bg-white rounded-2xl p-7 border border-slate-200 hover:border-brand-200 transition-colors" style="transition-delay:60ms">
+        <span class="w-11 h-11 rounded-lg bg-brand-500 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">One-Click Approvals</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Clients approve deliverables from any device in seconds. You get a timestamped audit trail — no more disputes over "I never saw that."</p>
+      </div>
+
+      <div class="reveal bg-white rounded-2xl p-7 border border-slate-200 hover:border-brand-200 transition-colors" style="transition-delay:120ms">
+        <span class="w-11 h-11 rounded-lg bg-brand-500 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Automated Follow-Ups</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">LaunchPad nudges clients and teammates on your behalf — tactfully, on schedule — so deadlines stop slipping because someone forgot to chase a reply.</p>
+      </div>
+
+      <div class="reveal bg-white rounded-2xl p-7 border border-slate-200 hover:border-brand-200 transition-colors" style="transition-delay:0ms">
+        <span class="w-11 h-11 rounded-lg bg-brand-500 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Seamless Team Handoffs</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Every handoff template carries full project context — files, decisions, open questions — so the next person starts informed instead of starting from zero.</p>
+      </div>
+
+      <div class="reveal bg-white rounded-2xl p-7 border border-slate-200 hover:border-brand-200 transition-colors" style="transition-delay:60ms">
+        <span class="w-11 h-11 rounded-lg bg-brand-500 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.1-2.8-2.8L7 14"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Live Project Dashboards</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">See every client engagement — intake, in progress, awaiting approval, delivered — in one view, so status updates stop eating your Monday mornings.</p>
+      </div>
+
+      <div class="reveal bg-white rounded-2xl p-7 border border-slate-200 hover:border-brand-200 transition-colors" style="transition-delay:120ms">
+        <span class="w-11 h-11 rounded-lg bg-brand-500 flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </span>
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Integrates With Your Stack</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Native connections to Slack, Google Drive, QuickBooks, and Zapier mean LaunchPad fits into tools your team already uses — no migration required.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= HOW IT WORKS ============================= -->
+<section id="how-it-works" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+      <p class="text-sm font-semibold text-brand-600 mb-3 uppercase tracking-wide">How it works</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Live in an afternoon, not a quarter</h2>
+      <p class="mt-4 text-slate-600 text-lg">No consultants, no six-week implementation. Most teams run their first client through LaunchPad the same day they sign up.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 relative">
+      <div class="hidden md:block absolute top-8 left-[16.5%] right-[16.5%] h-0.5 bg-gradient-to-r from-brand-200 via-brand-300 to-brand-200"></div>
+
+      <div class="reveal relative text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-grad-primary text-white font-display font-bold text-2xl flex items-center justify-center relative z-10 shadow-lg shadow-brand-200">01</div>
+        <h3 class="font-display font-bold text-lg text-slate-900 mt-6 mb-2">Build your workflow</h3>
+        <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">Pick a template or drag-and-drop your own onboarding, approval, and handoff steps in our visual builder.</p>
+      </div>
+
+      <div class="reveal relative text-center" style="transition-delay:120ms">
+        <div class="w-16 h-16 mx-auto rounded-full bg-grad-primary text-white font-display font-bold text-2xl flex items-center justify-center relative z-10 shadow-lg shadow-brand-200">02</div>
+        <h3 class="font-display font-bold text-lg text-slate-900 mt-6 mb-2">Invite your client</h3>
+        <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">Send one branded link. Clients complete intake, review deliverables, and approve work — zero logins to remember.</p>
+      </div>
+
+      <div class="reveal relative text-center" style="transition-delay:240ms">
+        <div class="w-16 h-16 mx-auto rounded-full bg-grad-primary text-white font-display font-bold text-2xl flex items-center justify-center relative z-10 shadow-lg shadow-brand-200">03</div>
+        <h3 class="font-display font-bold text-lg text-slate-900 mt-6 mb-2">LaunchPad runs the rest</h3>
+        <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">Reminders, status updates, and handoffs happen automatically — you just watch the dashboard and do the billable work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= PRICING ============================= -->
+<section id="pricing" class="py-24 md:py-32 bg-slate-900 relative overflow-hidden">
+  <div class="absolute inset-0 hero-glow opacity-60"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <p class="text-sm font-semibold text-brand-400 mb-3 uppercase tracking-wide">Pricing</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Simple pricing that scales with your team</h2>
+      <p class="mt-4 text-slate-300 text-lg">Every plan includes unlimited clients. Pay for your team size, not your growth.</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="flex items-center justify-center gap-4 mb-14 reveal">
+      <span id="label-monthly" class="text-sm font-semibold text-slate-900 bg-white rounded-full px-1">Monthly</span>
+      <button id="pricing-toggle" class="toggle-track" role="switch" aria-checked="false" aria-label="Toggle annual pricing">
+        <span class="toggle-thumb"></span>
+      </button>
+      <span id="label-annual" class="text-sm font-semibold text-slate-400 flex items-center gap-2">
+        Annual
+        <span class="text-[11px] font-bold text-emerald-900 bg-emerald-400 rounded-full px-2 py-0.5">Save 20%</span>
+      </span>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-start">
+
+      <!-- Starter -->
+      <div class="pricing-card bg-white/5 border border-white/10 rounded-2xl p-8">
+        <h3 class="font-display font-bold text-xl text-white mb-1">Starter</h3>
+        <p class="text-sm text-slate-400 mb-6">For solo freelancers running a handful of clients at a time.</p>
+        <div class="flex items-end gap-1 mb-1">
+          <span class="text-4xl font-display font-bold text-white">$</span>
+          <span class="price-value text-5xl font-display font-bold text-white" data-monthly="29" data-annual="23">29</span>
+          <span class="price-period text-slate-400 mb-1.5">/month</span>
+        </div>
+        <p class="annual-savings hidden text-xs text-emerald-400 mb-6">Billed as $276/year</p>
+        <p class="text-xs text-slate-500 mb-6">Up to 5 active clients</p>
+        <a href="#" class="block text-center btn-secondary border border-white/20 text-white font-semibold px-6 py-3 rounded-lg mb-8 hover:bg-white/10">Start Free Trial</a>
+        <ul class="space-y-3 text-sm text-slate-300">
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>1 branded onboarding flow</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited approval requests</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Email reminders & nudges</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>1 team seat</li>
+        </ul>
+      </div>
+
+      <!-- Pro (featured) -->
+      <div class="pricing-card featured bg-white rounded-2xl p-8 relative lg:-translate-y-4">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-grad-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">Most Popular</span>
+        <h3 class="font-display font-bold text-xl text-slate-900 mb-1">Pro</h3>
+        <p class="text-sm text-slate-500 mb-6">For growing agencies running onboarding and handoffs at scale.</p>
+        <div class="flex items-end gap-1 mb-1">
+          <span class="text-4xl font-display font-bold text-slate-900">$</span>
+          <span class="price-value text-5xl font-display font-bold text-slate-900" data-monthly="79" data-annual="63">79</span>
+          <span class="price-period text-slate-500 mb-1.5">/month</span>
+        </div>
+        <p class="annual-savings hidden text-xs text-emerald-600 mb-6">Billed as $756/year</p>
+        <p class="text-xs text-slate-500 mb-6">Up to 25 active clients</p>
+        <a href="#" class="block text-center btn-primary text-white font-semibold px-6 py-3 rounded-lg mb-8">Start Free Trial</a>
+        <ul class="space-y-3 text-sm text-slate-700">
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Starter, plus:</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited onboarding flows</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Team handoff templates</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Slack & QuickBooks integrations</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 10 team seats</li>
+        </ul>
+      </div>
+
+      <!-- Agency -->
+      <div class="pricing-card bg-white/5 border border-white/10 rounded-2xl p-8">
+        <h3 class="font-display font-bold text-xl text-white mb-1">Agency</h3>
+        <p class="text-sm text-slate-400 mb-6">For multi-team agencies managing complex client rosters.</p>
+        <div class="flex items-end gap-1 mb-1">
+          <span class="text-4xl font-display font-bold text-white">$</span>
+          <span class="price-value text-5xl font-display font-bold text-white" data-monthly="199" data-annual="159">199</span>
+          <span class="price-period text-slate-400 mb-1.5">/month</span>
+        </div>
+        <p class="annual-savings hidden text-xs text-emerald-400 mb-6">Billed as $1,908/year</p>
+        <p class="text-xs text-slate-500 mb-6">Unlimited active clients</p>
+        <a href="#" class="block text-center btn-secondary border border-white/20 text-white font-semibold px-6 py-3 rounded-lg mb-8 hover:bg-white/10">Talk to Sales</a>
+        <ul class="space-y-3 text-sm text-slate-300">
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro, plus:</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Custom roles & permissions</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Dedicated onboarding specialist</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Priority support & SLA</li>
+          <li class="flex items-start gap-2"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited team seats</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TESTIMONIALS ============================= -->
+<section id="testimonials" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <p class="text-sm font-semibold text-brand-600 mb-3 uppercase tracking-wide">Customer stories</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Agencies run leaner with LaunchPad</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-7">
+
+      <div class="testimonial-card reveal bg-white rounded-2xl border border-slate-200 p-8">
+        <div class="flex gap-1 mb-5 text-amber-400">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p class="text-slate-700 leading-relaxed mb-6">"We used to lose two full days per client just getting contracts signed and assets collected. LaunchPad cut our onboarding time by 60% in the first month — our PMs actually have bandwidth for strategy work now."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-400 to-purple-400 flex items-center justify-center text-white font-display font-bold">JM</div>
+          <div>
+            <p class="font-semibold text-slate-900 text-sm">Jordan Mercer</p>
+            <p class="text-xs text-slate-500">Operations Director, Northfield & Co.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal bg-white rounded-2xl border border-slate-200 p-8" style="transition-delay:90ms">
+        <div class="flex gap-1 mb-5 text-amber-400">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p class="text-slate-700 leading-relaxed mb-6">"The approval tracking alone paid for the subscription. We went from chasing sign-offs over three different channels to a single link clients actually click. Our average approval time dropped from 5 days to under 36 hours."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center text-white font-display font-bold">PR</div>
+          <div>
+            <p class="font-semibold text-slate-900 text-sm">Priya Raman</p>
+            <p class="text-xs text-slate-500">Founder, Verdant Studio</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal bg-white rounded-2xl border border-slate-200 p-8" style="transition-delay:180ms">
+        <div class="flex gap-1 mb-5 text-amber-400">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p class="text-slate-700 leading-relaxed mb-6">"Handoffs between our design and dev teams used to mean re-explaining every brief from scratch. With LaunchPad's handoff templates, context travels with the project — we've cut rework requests by almost half."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-400 to-orange-400 flex items-center justify-center text-white font-display font-bold">DC</div>
+          <div>
+            <p class="font-semibold text-slate-900 text-sm">Diego Castillo</p>
+            <p class="text-xs text-slate-500">Head of Delivery, Blackwood Digital</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FAQ ============================= -->
+<section id="faq" class="py-24 md:py-32 bg-brand-50/50">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-14 reveal">
+      <p class="text-sm font-semibold text-brand-600 mb-3 uppercase tracking-wide">FAQ</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Questions, answered</h2>
+    </div>
+
+    <div class="reveal">
+      <div class="faq-item">
+        <button class="faq-question w-full flex items-center justify-between py-5 text-left">
+          <span class="font-semibold text-slate-900 pr-6">Do my clients need to create an account or download anything?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="pb-5 text-slate-600 leading-relaxed pr-10">No. Clients just click the unique link you send them — no sign-up, no password, no app to install. It works in any browser on desktop or mobile, which is exactly why completion rates are so much higher than form-based tools.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question w-full flex items-center justify-between py-5 text-left">
+          <span class="font-semibold text-slate-900 pr-6">How long does it take to set up our first workflow?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="pb-5 text-slate-600 leading-relaxed pr-10">Most teams build and launch their first onboarding workflow in under 15 minutes using one of our pre-built templates (agency onboarding, creative review, dev handoff). You can fully customize steps, branding, and automation rules afterward.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question w-full flex items-center justify-between py-5 text-left">
+          <span class="font-semibold text-slate-900 pr-6">Can I switch plans or cancel at any time?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="pb-5 text-slate-600 leading-relaxed pr-10">Yes — upgrade, downgrade, or cancel from your billing settings at any time, no phone calls or retention forms required. If you cancel, you keep access through the end of your current billing period.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question w-full flex items-center justify-between py-5 text-left">
+          <span class="font-semibold text-slate-900 pr-6">Does LaunchPad integrate with the tools we already use?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="pb-5 text-slate-600 leading-relaxed pr-10">LaunchPad has native integrations with Slack, Google Drive, Dropbox, and QuickBooks, plus a Zapier connection for everything else. Pro and Agency plans also include API access for custom integrations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question w-full flex items-center justify-between py-5 text-left">
+          <span class="font-semibold text-slate-900 pr-6">Is there a limit on the number of clients or projects?</span>
+          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="pb-5 text-slate-600 leading-relaxed pr-10">Starter supports up to 5 active clients at a time and Pro supports up to 25 — both with unlimited projects and workflows per client. Agency plans remove the active client cap entirely for teams managing large rosters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FINAL CTA ============================= -->
+<section class="py-24 md:py-28 bg-grad-primary relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(circle at 20% 20%, white 1px, transparent 1px); background-size: 28px 28px;"></div>
+  <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center relative reveal">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight mb-5">Give your clients the experience that gets you referrals.</h2>
+    <p class="text-brand-50 text-lg mb-10 max-w-xl mx-auto">Join 1,200+ agencies and freelance teams who stopped losing hours to onboarding chaos. Your first 14 days are free — no credit card needed.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#pricing" class="bg-white text-brand-700 font-semibold px-8 py-3.5 rounded-lg hover:bg-brand-50 transition-colors shadow-xl">Start Your Free Trial</a>
+      <a href="#how-it-works" class="border border-white/40 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors">Book a Live Demo</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="bg-slate-950 text-slate-400 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+      <div class="lg:col-span-2">
+        <a href="#top" class="flex items-center gap-2 mb-4">
+          <span class="w-8 h-8 rounded-lg bg-grad-primary flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M12 12L20 7M12 12V22M12 12L4 7" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="font-display font-bold text-lg text-white">LaunchPad</span>
+        </a>
+        <p class="text-sm leading-relaxed max-w-xs">Workflow automation for agencies and freelance teams — onboarding, approvals, and handoffs, without the chaos.</p>
+        <div class="flex gap-3 mt-6">
+          <a href="#" aria-label="Twitter / X" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.6L4.5 22H1.3l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2zM17.7 20h1.9L7.5 4H5.5l12.2 16z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.78 2.66 4.78 6.12V21h-4v-5.5c0-1.3-.02-3-1.82-3-1.82 0-2.1 1.42-2.1 2.9V21H9V9z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.6 31.6 0 000 12a31.6 31.6 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.6 31.6 0 0024 12a31.6 31.6 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Product</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+          <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Integrations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Company</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#testimonials" class="hover:text-white transition-colors">Customers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Resources</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>&copy; <span id="current-year">2025</span> LaunchPad, Inc. All rights reserved.</p>
+      <p>Fictional product — portfolio demo built by Kave Xiron.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const vw = document.documentElement.clientWidth;
+    let offenders = [];
+    document.querySelectorAll('body *').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.right > vw + 2 || r.width > vw + 2) {
+        offenders.push(el.tagName + '.' + (el.className+'').toString().slice(0,40) + ' right=' + Math.round(r.right) + ' width=' + Math.round(r.width));
+      }
+    });
+    document.title = 'DIAG vw=' + vw + ' | ' + offenders.slice(0,8).join(' || ');
+  }, 300);
+});
+</script>
+</body>
+</html>

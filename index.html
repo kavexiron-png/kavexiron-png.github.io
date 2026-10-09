@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kavexiron | Freelance Web Developer & Content Creator</title>
+<meta name="description" content="Freelance web designer, developer & content creator. I build fast, modern websites and produce engaging video content for small businesses, startups and personal brands." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Space Grotesk', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          ink: '#0b0d12',
+          accent: '#6c5ce7',
+          accent2: '#00d2a8',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background:#0b0d12; color:#e9e9ef; }
+  h1,h2,h3,.display { font-family: 'Space Grotesk', sans-serif; }
+  .reveal { opacity:0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.show { opacity:1; transform:none; }
+  .gradient-text { background: linear-gradient(90deg,#6c5ce7,#00d2a8); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .card-glow:hover { box-shadow: 0 0 0 1px rgba(108,92,231,.5), 0 20px 60px -20px rgba(108,92,231,.5); }
+  .noise { background-image: radial-gradient(circle at 20% 20%, rgba(108,92,231,.15), transparent 40%), radial-gradient(circle at 80% 0%, rgba(0,210,168,.12), transparent 40%); }
+</style>
+</head>
+<body class="noise">
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink/70 border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="display text-xl font-bold tracking-tight">Kave<span class="gradient-text">xiron</span></a>
+    <nav class="hidden md:flex gap-8 text-sm text-white/70">
+      <a href="#work" class="hover:text-white transition">Work</a>
+      <a href="#services" class="hover:text-white transition">Services</a>
+      <a href="#process" class="hover:text-white transition">Process</a>
+      <a href="#about" class="hover:text-white transition">About</a>
+      <a href="#contact" class="hover:text-white transition">Contact</a>
+    </nav>
+    <a href="#contact" class="hidden md:inline-block text-sm font-semibold px-5 py-2.5 rounded-full bg-gradient-to-r from-accent to-accent2 text-ink hover:opacity-90 transition">Start a Project</a>
+    <button id="menuBtn" class="md:hidden text-white"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden flex flex-col gap-4 px-6 pb-6 text-white/80">
+    <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="pt-40 pb-24 px-6 max-w-6xl mx-auto">
+  <p class="reveal text-accent2 font-semibold tracking-widest text-xs uppercase mb-4">Web Design &amp; Development · Content Production</p>
+  <h1 class="reveal display text-4xl sm:text-6xl font-bold leading-tight max-w-3xl">I build websites &amp; content that turn visitors into <span class="gradient-text">paying customers.</span></h1>
+  <p class="reveal text-white/60 text-lg max-w-2xl mt-6">Freelance developer and content creator helping small businesses, startups and personal brands launch fast, modern, conversion-focused websites — backed by scroll-stopping video content.</p>
+  <div class="reveal flex flex-wrap gap-4 mt-8">
+    <a href="#work" class="px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent2 text-ink font-semibold hover:opacity-90 transition">View My Work</a>
+    <a href="#contact" class="px-6 py-3 rounded-full border border-white/20 font-semibold hover:bg-white/5 transition">Get a Free Quote</a>
+  </div>
+  <div class="reveal grid grid-cols-3 gap-6 mt-16 max-w-xl">
+    <div><div class="display text-3xl font-bold">4+</div><div class="text-white/50 text-sm">Project Types Covered</div></div>
+    <div><div class="display text-3xl font-bold">100%</div><div class="text-white/50 text-sm">Responsive &amp; Fast</div></div>
+    <div><div class="display text-3xl font-bold">2</div><div class="text-white/50 text-sm">Languages (EN / FA)</div></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="py-20 px-6 max-w-6xl mx-auto">
+  <h2 class="reveal display text-3xl sm:text-4xl font-bold mb-2">Selected Work</h2>
+  <p class="reveal text-white/50 mb-12">Concept projects built to demonstrate range across industries — each one is a fully live, fully responsive site.</p>
+
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <a href="demos/bella-bistro/" class="reveal card-glow group block rounded-2xl overflow-hidden border border-white/10 bg-white/[.03] transition">
+      <div class="aspect-video bg-gradient-to-br from-amber-800/40 to-rose-900/40 flex items-center justify-center text-5xl">🍽️</div>
+      <div class="p-6">
+        <span class="text-xs uppercase tracking-wider text-accent2 font-semibold">Restaurant · Booking System</span>
+        <h3 class="display text-xl font-bold mt-2 group-hover:text-accent2 transition">Bella Bistro</h3>
+        <p class="text-white/50 text-sm mt-2">Modern Italian restaurant site with an online reservation flow built to cut phone-call bookings.</p>
+        <span class="inline-block mt-4 text-sm font-semibold text-accent2">View live demo →</span>
+      </div>
+    </a>
+
+    <a href="demos/urban-thread/" class="reveal card-glow group block rounded-2xl overflow-hidden border border-white/10 bg-white/[.03] transition">
+      <div class="aspect-video bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-5xl">🛍️</div>
+      <div class="p-6">
+        <span class="text-xs uppercase tracking-wider text-accent2 font-semibold">E-commerce · Streetwear Brand</span>
+        <h3 class="display text-xl font-bold mt-2 group-hover:text-accent2 transition">Urban Thread</h3>
+        <p class="text-white/50 text-sm mt-2">Conversion-focused storefront concept for a DTC apparel brand launching online sales.</p>
+        <span class="inline-block mt-4 text-sm font-semibold text-accent2">View live demo →</span>
+      </div>
+    </a>
+
+    <a href="demos/launchpad/" class="reveal card-glow group block rounded-2xl overflow-hidden border border-white/10 bg-white/[.03] transition">
+      <div class="aspect-video bg-gradient-to-br from-indigo-900/60 to-violet-900/40 flex items-center justify-center text-5xl">🚀</div>
+      <div class="p-6">
+        <span class="text-xs uppercase tracking-wider text-accent2 font-semibold">SaaS · Landing Page + Copywriting</span>
+        <h3 class="display text-xl font-bold mt-2 group-hover:text-accent2 transition">LaunchPad</h3>
+        <p class="text-white/50 text-sm mt-2">High-conversion landing page for a workflow-automation SaaS, with full pricing &amp; FAQ logic.</p>
+        <span class="inline-block mt-4 text-sm font-semibold text-accent2">View live demo →</span>
+      </div>
+    </a>
+
+    <a href="demos/kavexiron-coach/" class="reveal card-glow group block rounded-2xl overflow-hidden border border-white/10 bg-white/[.03] transition">
+      <div class="aspect-video bg-gradient-to-br from-orange-900/40 to-stone-900 flex items-center justify-center text-5xl">💪</div>
+      <div class="p-6">
+        <span class="text-xs uppercase tracking-wider text-accent2 font-semibold">Personal Brand · Site + Video Content</span>
+        <h3 class="display text-xl font-bold mt-2 group-hover:text-accent2 transition">Kavexiron Coaching</h3>
+        <p class="text-white/50 text-sm mt-2">Personal brand site for a mind &amp; body coach — paired with short-form content strategy.</p>
+        <span class="inline-block mt-4 text-sm font-semibold text-accent2">View live demo →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 px-6 max-w-6xl mx-auto border-t border-white/5">
+  <h2 class="reveal display text-3xl sm:text-4xl font-bold mb-12">What I Do</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="reveal p-6 rounded-2xl border border-white/10 bg-white/[.03]">
+      <div class="text-3xl mb-4">🖥️</div>
+      <h3 class="display font-bold text-lg mb-2">Website Design &amp; Development</h3>
+      <p class="text-white/50 text-sm">Custom, fast, responsive websites — business sites, landing pages, online stores and booking systems, built with modern code or WordPress.</p>
+    </div>
+    <div class="reveal p-6 rounded-2xl border border-white/10 bg-white/[.03]">
+      <div class="text-3xl mb-4">🎬</div>
+      <h3 class="display font-bold text-lg mb-2">Content &amp; Video Production</h3>
+      <p class="text-white/50 text-sm">Short-form video editing, social content and brand storytelling that complements your site and grows your audience.</p>
+    </div>
+    <div class="reveal p-6 rounded-2xl border border-white/10 bg-white/[.03]">
+      <div class="text-3xl mb-4">📈</div>
+      <h3 class="display font-bold text-lg mb-2">Full Launch Packages</h3>
+      <p class="text-white/50 text-sm">Site + content bundles for founders and personal brands who want to launch once, professionally, and start converting immediately.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="py-20 px-6 max-w-6xl mx-auto border-t border-white/5">
+  <h2 class="reveal display text-3xl sm:text-4xl font-bold mb-12">How We'll Work Together</h2>
+  <div class="grid md:grid-cols-4 gap-6">
+    <div class="reveal"><div class="display text-accent2 text-2xl font-bold mb-2">01</div><h3 class="font-semibold mb-1">Discovery Call</h3><p class="text-white/50 text-sm">We talk about your goals, audience and what success looks like.</p></div>
+    <div class="reveal"><div class="display text-accent2 text-2xl font-bold mb-2">02</div><h3 class="font-semibold mb-1">Design &amp; Build</h3><p class="text-white/50 text-sm">I design and develop your site with regular check-ins and drafts.</p></div>
+    <div class="reveal"><div class="display text-accent2 text-2xl font-bold mb-2">03</div><h3 class="font-semibold mb-1">Review &amp; Refine</h3><p class="text-white/50 text-sm">You review, I revise — until it's exactly right.</p></div>
+    <div class="reveal"><div class="display text-accent2 text-2xl font-bold mb-2">04</div><h3 class="font-semibold mb-1">Launch &amp; Support</h3><p class="text-white/50 text-sm">Your site goes live, with optional ongoing content &amp; maintenance.</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 px-6 max-w-6xl mx-auto border-t border-white/5">
+  <div class="grid md:grid-cols-3 gap-12 items-start">
+    <div class="md:col-span-2">
+      <h2 class="reveal display text-3xl sm:text-4xl font-bold mb-6">About Me</h2>
+      <p class="reveal text-white/60 leading-relaxed mb-4">I'm a freelance web developer and content creator with hands-on experience building software and web projects in real production environments. I combine clean, modern code with an eye for design and storytelling — so your website doesn't just look good, it actually works for your business.</p>
+      <p class="reveal text-white/60 leading-relaxed">I work fluently in both English and Persian, and I'm comfortable taking a project from a rough idea to a fully launched, polished product — website, content and all.</p>
+    </div>
+    <div class="reveal p-6 rounded-2xl border border-white/10 bg-white/[.03]">
+      <h3 class="font-semibold mb-4">Tech &amp; Tools</h3>
+      <div class="flex flex-wrap gap-2 text-xs text-white/70">
+        <span class="px-3 py-1.5 rounded-full bg-white/10">HTML/CSS/JS</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/10">WordPress</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/10">React</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/10">Tailwind CSS</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/10">Git/GitHub</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/10">CapCut Video Editing</span>
+        <span class="px-3 py-1.5 rounded-full bg-white/10">SEO Basics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-6 max-w-4xl mx-auto border-t border-white/5 text-center">
+  <h2 class="reveal display text-3xl sm:text-5xl font-bold mb-4">Let's build something <span class="gradient-text">great</span> together.</h2>
+  <p class="reveal text-white/50 mb-8 max-w-xl mx-auto">Tell me about your project and I'll get back to you with next steps — usually within 24 hours.</p>
+  <form id="contactForm" class="reveal grid sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+    <input required type="text" placeholder="Your Name" class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-accent2 transition" />
+    <input required type="email" placeholder="Your Email" class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-accent2 transition" />
+    <input type="text" placeholder="Project Type (e.g. Website, Content, Both)" class="sm:col-span-2 bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-accent2 transition" />
+    <textarea required placeholder="Tell me about your project..." rows="4" class="sm:col-span-2 bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-accent2 transition"></textarea>
+    <button type="submit" class="sm:col-span-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent to-accent2 text-ink font-bold hover:opacity-90 transition">Send Message</button>
+  </form>
+  <p id="formSuccess" class="hidden mt-4 text-accent2 font-semibold">✓ Thanks! Your message has been noted — I'll be in touch soon.</p>
+</section>
+
+<footer class="py-10 px-6 border-t border-white/5 text-center text-white/40 text-sm">
+  <p>© 2025 Kavexiron — Freelance Web &amp; Content Studio.</p>
+  <p class="mt-1">contact@kavexiron.dev · Based in Iran, working worldwide</p>
+</footer>
+
+<script>
+  // mobile menu
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // fake contact form
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.reset();
+    document.getElementById('formSuccess').classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>

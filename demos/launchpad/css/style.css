@@ -1,0 +1,246 @@
+/* LaunchPad — portfolio demo stylesheet
+   Handles things Tailwind utility classes can't cleanly express:
+   custom gradients, keyframe animations, accordion transitions, toggle switch. */
+
+:root {
+  --grad-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  --grad-soft: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(168,85,247,0.12) 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background-color: #fbfbfe;
+}
+
+.font-display {
+  font-family: 'Sora', 'Inter', sans-serif;
+}
+
+/* ---------- Gradient text / backgrounds ---------- */
+.text-gradient {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-grad-primary {
+  background: var(--grad-primary);
+}
+
+.bg-grad-soft {
+  background: var(--grad-soft);
+}
+
+.hero-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(139,92,246,0.18), transparent 60%);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: var(--grad-primary);
+  background-size: 160% 160%;
+  background-position: 0% 50%;
+  transition: background-position 0.45s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px -8px rgba(99,102,241,0.55);
+}
+.btn-primary:hover {
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -8px rgba(99,102,241,0.65);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+  transform: translateY(-2px);
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--grad-primary);
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ---------- Browser mockup ---------- */
+.mockup-window {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -20px rgba(49,46,129,0.35), 0 0 0 1px rgba(99,102,241,0.08);
+}
+.mockup-bar {
+  background: #f3f4f6;
+  border-radius: 16px 16px 0 0;
+}
+.mockup-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+}
+
+.skeleton-bar {
+  border-radius: 6px;
+  background: #e5e7ff;
+}
+
+.kanban-card {
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.kanban-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -8px rgba(99,102,241,0.3);
+}
+
+/* floating badges on hero mockup */
+.float-badge {
+  animation: floaty 4.5s ease-in-out infinite;
+}
+.float-badge.delay {
+  animation-delay: 1.4s;
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ---------- Pricing toggle switch ---------- */
+.toggle-track {
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  background: #e0e0fb;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.toggle-track.active {
+  background: var(--grad-primary);
+}
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.toggle-track.active .toggle-thumb {
+  transform: translateX(26px);
+}
+
+.price-value {
+  transition: opacity 0.2s ease;
+}
+
+.pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-6px);
+}
+.pricing-card.featured {
+  box-shadow: 0 25px 50px -15px rgba(99,102,241,0.45);
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+.faq-question {
+  cursor: pointer;
+  user-select: none;
+}
+.faq-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.faq-item.open .faq-answer {
+  opacity: 1;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.65,.3,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.visible > * {
+  transition-delay: calc(var(--stagger-index, 0) * 90ms);
+}
+
+/* ---------- Mobile nav ---------- */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+#mobile-menu.open {
+  max-height: 480px;
+}
+
+/* ---------- Logo wordmarks ---------- */
+.logo-wordmark {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #9ca3af;
+  transition: color 0.25s ease, opacity 0.25s ease;
+  opacity: 0.85;
+}
+.logo-wordmark:hover {
+  color: #6366f1;
+  opacity: 1;
+}
+
+/* ---------- Testimonial card ---------- */
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -18px rgba(49,46,129,0.25);
+}
+
+/* scrollbar niceties (non-critical, progressive enhancement) */
+::selection {
+  background: #c4b5fd;
+  color: #1e1b4b;
+}

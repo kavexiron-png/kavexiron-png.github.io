@@ -1,0 +1,321 @@
+/* ============================================================
+   Bella Bistro — Portfolio Demo
+   Hand-written CSS layered on top of Tailwind CDN utilities.
+   Contains: custom properties, fonts, animations, and the few
+   bespoke components Tailwind utilities don't cover cleanly.
+   ============================================================ */
+
+:root {
+  --color-forest: #1f3d2b;      /* deep green */
+  --color-forest-dark: #142a1d;
+  --color-burgundy: #6e1423;    /* deep burgundy */
+  --color-burgundy-dark: #4d0e18;
+  --color-cream: #faf4e9;
+  --color-cream-dark: #f0e6d2;
+  --color-gold: #c9a24b;
+  --color-gold-light: #e1c585;
+  --color-ink: #26231f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* -------------------- Utility helpers -------------------- */
+.text-gold { color: var(--color-gold); }
+.bg-forest { background-color: var(--color-forest); }
+.bg-forest-dark { background-color: var(--color-forest-dark); }
+.bg-burgundy { background-color: var(--color-burgundy); }
+.bg-burgundy-dark { background-color: var(--color-burgundy-dark); }
+.bg-cream { background-color: var(--color-cream); }
+.bg-cream-dark { background-color: var(--color-cream-dark); }
+.border-gold { border-color: var(--color-gold); }
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gold);
+  color: var(--color-forest-dark);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(201, 162, 75, 0.35);
+}
+.btn-gold:hover {
+  background-color: #dcb75e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(201, 162, 75, 0.45);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold-light);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-forest-dark);
+}
+
+/* -------------------- Section eyebrow label -------------------- */
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+}
+.eyebrow.on-dark {
+  color: var(--color-gold-light);
+}
+
+.divider-leaf {
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background: var(--color-gold);
+  position: relative;
+}
+.divider-leaf::before,
+.divider-leaf::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+.divider-leaf::before { left: -14px; }
+.divider-leaf::after { right: -14px; }
+
+/* -------------------- Header -------------------- */
+#site-header {
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+}
+#site-header.scrolled {
+  background-color: rgba(20, 42, 29, 0.97);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-gold);
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+#mobile-menu.open {
+  max-height: 480px;
+}
+
+/* -------------------- Hero -------------------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,42,29,0.55) 0%, rgba(20,42,29,0.65) 45%, rgba(20,42,29,0.9) 100%);
+  z-index: -1;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(250, 244, 233, 0.7);
+  border-radius: 20px;
+}
+.scroll-cue::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  background: var(--color-gold);
+  border-radius: 4px;
+  transform: translateX(-50%);
+  animation: scrollCue 1.8s ease-in-out infinite;
+}
+@keyframes scrollCue {
+  0% { opacity: 1; top: 6px; }
+  70% { opacity: 0; top: 20px; }
+  100% { opacity: 0; top: 6px; }
+}
+
+/* -------------------- Menu cards -------------------- */
+.menu-item {
+  border-bottom: 1px dashed rgba(38, 35, 31, 0.2);
+}
+.menu-item:last-child { border-bottom: none; }
+
+.menu-tab {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.menu-tab.active {
+  background-color: var(--color-forest);
+  color: var(--color-cream);
+  box-shadow: 0 6px 16px rgba(31, 61, 43, 0.3);
+}
+
+.menu-panel { display: none; }
+.menu-panel.active { display: block; }
+
+/* -------------------- Gallery -------------------- */
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.75rem;
+}
+.gallery-item img {
+  transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(20,42,29,0.65) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.gallery-item:hover::after { opacity: 1; }
+
+/* -------------------- Testimonials -------------------- */
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}
+
+/* -------------------- Reservation form -------------------- */
+.field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-cream-dark);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+.field-input {
+  width: 100%;
+  background-color: rgba(250, 244, 233, 0.08);
+  border: 1px solid rgba(250, 244, 233, 0.25);
+  color: var(--color-cream);
+  border-radius: 0.6rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.field-input::placeholder { color: rgba(250, 244, 233, 0.45); }
+.field-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  background-color: rgba(250, 244, 233, 0.14);
+}
+.field-input option { color: var(--color-ink); }
+
+/* -------------------- Scroll reveal animations -------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* -------------------- Social icons -------------------- */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 244, 233, 0.25);
+  color: var(--color-cream);
+  transition: all 0.25s ease;
+}
+.social-icon:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-forest-dark);
+  transform: translateY(-3px);
+}
+
+/* -------------------- Map frame -------------------- */
+.map-frame {
+  filter: grayscale(0.3) sepia(0.15);
+  border-radius: 0.75rem;
+}
+
+/* -------------------- Toast / confirmation -------------------- */
+#reservation-success {
+  display: none;
+}
+#reservation-success.show {
+  display: flex;
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2.6rem; }
+}

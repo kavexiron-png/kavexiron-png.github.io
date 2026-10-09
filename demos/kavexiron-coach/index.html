@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Portfolio demo project — personal brand site example combining web design + content/video production service offering -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavexiron — Train the Mind &amp; Body Together | Performance Coaching</title>
+<meta name="description" content="Kavexiron coaching blends physical training, mental resilience, and continuous learning into one methodology. 1:1 coaching, group programs, and self-paced courses.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0a0a0c',
+          paper: '#f5f4ef',
+          lime: '#d2ff4d',
+          ember: '#ff5a36'
+        },
+        fontFamily: {
+          display: ['"Archivo Black"', 'Inter', 'sans-serif'],
+          accent: ['"Bebas Neue"', 'sans-serif'],
+          sans: ['Inter', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Custom styles -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Favicon (inline SVG, no asset file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0c'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial Black' fill='%23d2ff4d' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+</head>
+
+<body class="bg-ink text-paper antialiased grain">
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-20">
+    <a href="#top" class="flex items-center gap-2 group">
+      <span class="w-9 h-9 rounded-lg bg-lime flex items-center justify-center font-display text-ink text-lg">K</span>
+      <span class="font-accent text-2xl tracking-widest">KAVEXIRON</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-sm">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#pillars" class="nav-link">Method</a>
+      <a href="#programs" class="nav-link">Programs</a>
+      <a href="#media" class="nav-link">Content</a>
+      <a href="#testimonials" class="nav-link">Results</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="hidden lg:block">
+      <a href="#contact" class="btn-primary px-5 py-3 rounded-full text-sm">Book a Free Call</a>
+    </div>
+
+    <button id="menu-toggle" class="hamburger lg:hidden flex flex-col gap-[6px] p-2" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden border-t border-line bg-ink/95">
+    <nav class="flex flex-col px-5 py-4 gap-1 font-medium">
+      <a href="#about" class="py-3 nav-link">About</a>
+      <a href="#pillars" class="py-3 nav-link">Method</a>
+      <a href="#programs" class="py-3 nav-link">Programs</a>
+      <a href="#media" class="py-3 nav-link">Content</a>
+      <a href="#testimonials" class="py-3 nav-link">Results</a>
+      <a href="#contact" class="py-3 nav-link">Contact</a>
+      <a href="#contact" class="btn-primary text-center px-5 py-3 rounded-full text-sm mt-2">Book a Free Call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="hero-bg relative pt-36 pb-24 sm:pt-44 sm:pb-32 px-5 sm:px-8 overflow-hidden">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <p class="reveal inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-6 border border-lime/30 rounded-full px-4 py-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-lime"></span>
+        Mind &amp; Body Performance Coaching
+      </p>
+      <h1 class="reveal reveal-delay-1 font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] mb-6">
+        Build a body that performs.<br>
+        Build a mind that <span class="text-lime">doesn't quit.</span>
+      </h1>
+      <p class="reveal reveal-delay-2 text-lg text-paper/70 max-w-lg mb-9">
+        Kavexiron is a coaching methodology for people done compartmentalizing fitness, focus, and growth.
+        One system. Train the mind and body together — and watch every other area of life follow.
+      </p>
+      <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+        <a href="#contact" class="btn-primary px-7 py-4 rounded-full font-semibold">Book a Free Discovery Call</a>
+        <a href="#programs" class="btn-outline px-7 py-4 rounded-full font-semibold">See Coaching Programs</a>
+      </div>
+      <div class="reveal reveal-delay-4 flex items-center gap-6 mt-10 text-sm text-paper/60">
+        <div><span class="font-display text-2xl text-paper block">500+</span>clients coached</div>
+        <div class="w-px h-10 bg-line"></div>
+        <div><span class="font-display text-2xl text-paper block">7 yrs</span>in the field</div>
+        <div class="w-px h-10 bg-line"></div>
+        <div><span class="font-display text-2xl text-paper block">4.9/5</span>avg. rating</div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="video-mock" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80');">
+        <button class="play-btn" data-play-video aria-label="Play intro video">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="absolute bottom-5 left-5 z-[2] text-sm">
+          <p class="font-semibold">Meet Kavexiron — 90 sec intro</p>
+          <p class="text-paper/60 text-xs">The method, the mindset, the proof.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Logo / credibility marquee -->
+<section class="border-y border-line py-6 overflow-hidden bg-ink-2/40">
+  <div class="marquee-track gap-16 text-paper/40 font-accent text-xl tracking-widest">
+    <span class="flex gap-16 pr-16">
+      <span>AS FEATURED IN · PERFORM MAG</span>
+      <span>IRONCORE PODCAST</span>
+      <span>MINDSET WEEKLY</span>
+      <span>FLOWSTATE SUMMIT</span>
+      <span>THE GRIT REPORT</span>
+    </span>
+    <span class="flex gap-16 pr-16" aria-hidden="true">
+      <span>AS FEATURED IN · PERFORM MAG</span>
+      <span>IRONCORE PODCAST</span>
+      <span>MINDSET WEEKLY</span>
+      <span>FLOWSTATE SUMMIT</span>
+      <span>THE GRIT REPORT</span>
+    </span>
+  </div>
+</section>
+
+<!-- =========================================================
+     ABOUT / COACH BIO
+========================================================= -->
+<section id="about" class="py-24 sm:py-32 px-5 sm:px-8">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal order-2 lg:order-1 relative">
+      <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-cover bg-center shadow-2xl" style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80');"></div>
+      <div class="absolute -bottom-6 -right-4 sm:-right-8 bg-ink-2 border border-line rounded-xl p-5 max-w-[220px] shadow-xl">
+        <p class="font-display text-lime text-3xl">7+</p>
+        <p class="text-sm text-paper/70">years building the mind-body method</p>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <p class="reveal text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-4">The Coach</p>
+      <h2 class="reveal reveal-delay-1 font-display text-3xl sm:text-4xl mb-6 leading-tight">
+        I used to think discipline was a personality trait. <span class="text-paper/50">It isn't.</span>
+      </h2>
+      <div class="reveal reveal-delay-2 space-y-4 text-paper/70 leading-relaxed">
+        <p>
+          I spent my early twenties chasing two separate versions of "better" — one in the gym, one in my head —
+          and getting nowhere with either. I could out-train almost anyone and still lose to my own mind
+          by 10am. Burnout, inconsistency, a body that looked capable and a brain that didn't believe it was.
+        </p>
+        <p>
+          The turning point wasn't a harder program. It was realizing physical training, mental resilience,
+          and continuous learning were never three separate disciplines — they're one feedback loop. Train
+          your nervous system under load, and your mind learns to stay calm under pressure everywhere else.
+          Learn deliberately, and your body stops being the thing you neglect while you "focus on work."
+        </p>
+        <p>
+          That's the Kavexiron method: combat-conditioning-based physical training, performance psychology,
+          and structured self-development, run as one integrated system — not three apps and a to-do list.
+          I've since built that system with 500+ clients, from founders to competitive athletes to people
+          simply done feeling like two different people before and after lunch.
+        </p>
+      </div>
+      <a href="#programs" class="reveal reveal-delay-3 inline-flex mt-8 items-center gap-2 text-lime font-semibold group">
+        See how we'd work together
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     3 PILLARS
+========================================================= -->
+<section id="pillars" class="py-24 sm:py-32 px-5 sm:px-8 bg-ink-2/40 border-y border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <p class="reveal text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-4">The Method</p>
+      <h2 class="reveal reveal-delay-1 font-display text-3xl sm:text-4xl mb-5">Three pillars. One system.</h2>
+      <p class="reveal reveal-delay-2 text-paper/70">
+        Every program, call, and workout maps back to these three. Neglect one and the other two cap out fast.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Pillar 1 -->
+      <div class="reveal pillar-card rounded-2xl p-8">
+        <div class="pillar-icon mb-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7"><path d="M6.5 6.5l11 11M4 4l3 3M20 20l-3-3M14.5 6.5L17.5 3.5a2.1 2.1 0 013 3l-3 3M9.5 17.5L6.5 20.5a2.1 2.1 0 01-3-3l3-3"/></svg>
+        </div>
+        <h3 class="font-display text-xl mb-3">Physical Training</h3>
+        <p class="text-paper/70 leading-relaxed">
+          Strength, conditioning, and mixed martial-arts-based movement built around your schedule and body —
+          not a generic plan. Train to build a nervous system that handles stress, not just a mirror muscle.
+        </p>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="reveal reveal-delay-1 pillar-card rounded-2xl p-8">
+        <div class="pillar-icon mb-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7"><path d="M9.5 2a5.5 5.5 0 00-4.42 8.78A4 4 0 007 18h8a4 4 0 001.92-7.52A5.5 5.5 0 0012 2a5.48 5.48 0 00-2.5.5z"/><path d="M9 18v2a2 2 0 002 2h2a2 2 0 002-2v-2"/></svg>
+        </div>
+        <h3 class="font-display text-xl mb-3">Mental Resilience</h3>
+        <p class="text-paper/70 leading-relaxed">
+          Breathwork, exposure drills, and performance-psychology tools used by high-pressure athletes —
+          adapted for founders, parents, and professionals who need to stay composed when it counts.
+        </p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="reveal reveal-delay-2 pillar-card rounded-2xl p-8">
+        <div class="pillar-icon mb-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/></svg>
+        </div>
+        <h3 class="font-display text-xl mb-3">Continuous Learning</h3>
+        <p class="text-paper/70 leading-relaxed">
+          Structured reading, reflection, and skill-stacking systems so growth compounds between sessions —
+          not just during them. Discipline as a designed system, not a daily act of willpower.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROGRAMS
+========================================================= -->
+<section id="programs" class="py-24 sm:py-32 px-5 sm:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <p class="reveal text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-4">Coaching Programs</p>
+      <h2 class="reveal reveal-delay-1 font-display text-3xl sm:text-4xl mb-5">Pick your level of support</h2>
+      <p class="reveal reveal-delay-2 text-paper/70">From fully custom 1:1 coaching to a self-paced course you run on your own time.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+
+      <!-- Program 1 -->
+      <div class="reveal program-card rounded-2xl p-8 flex flex-col">
+        <h3 class="font-display text-xl mb-1">Self-Paced Course</h3>
+        <p class="text-paper/60 text-sm mb-6">Build the foundation at your own speed</p>
+        <p class="font-display text-4xl mb-1">$249</p>
+        <p class="text-paper/50 text-sm mb-7">one-time</p>
+        <ul class="space-y-3 text-sm text-paper/80 mb-8 flex-1">
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>8-week video curriculum</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Training + mindset workbooks</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Private community access</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Lifetime updates</li>
+        </ul>
+        <a href="#contact" class="btn-outline text-center rounded-full py-3 font-semibold">Get the Course</a>
+      </div>
+
+      <!-- Program 2 — featured -->
+      <div class="reveal reveal-delay-1 program-card featured rounded-2xl p-8 flex flex-col relative lg:-translate-y-4">
+        <span class="absolute -top-3 left-8 bg-lime text-ink text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full">Most Popular</span>
+        <h3 class="font-display text-xl mb-1">1:1 Coaching</h3>
+        <p class="text-paper/60 text-sm mb-6">Fully custom, direct access to Kavexiron</p>
+        <p class="font-display text-4xl mb-1">$900–$1,400</p>
+        <p class="text-paper/50 text-sm mb-7">per month</p>
+        <ul class="space-y-3 text-sm text-paper/80 mb-8 flex-1">
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Weekly 1:1 video calls</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Custom training + mindset plan</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Daily chat access</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Quarterly in-person intensive option</li>
+        </ul>
+        <a href="#contact" class="btn-primary text-center rounded-full py-3 font-semibold">Apply for 1:1</a>
+      </div>
+
+      <!-- Program 3 -->
+      <div class="reveal reveal-delay-2 program-card rounded-2xl p-8 flex flex-col">
+        <h3 class="font-display text-xl mb-1">Group Program</h3>
+        <p class="text-paper/60 text-sm mb-6">Small cohort, shared accountability</p>
+        <p class="font-display text-4xl mb-1">$349</p>
+        <p class="text-paper/50 text-sm mb-7">per month</p>
+        <ul class="space-y-3 text-sm text-paper/80 mb-8 flex-1">
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>2x weekly group calls</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Cohort of max 12 people</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Monthly progress review</li>
+          <li class="flex gap-3"><svg class="check-ico w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Shared training + mindset tracker</li>
+        </ul>
+        <a href="#contact" class="btn-outline text-center rounded-full py-3 font-semibold">Join a Cohort</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MEDIA / CONTENT GRID
+========================================================= -->
+<section id="media" class="py-24 sm:py-32 px-5 sm:px-8 bg-ink-2/40 border-y border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+      <div class="max-w-xl">
+        <p class="reveal text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-4">Content &amp; Media</p>
+        <h2 class="reveal reveal-delay-1 font-display text-3xl sm:text-4xl mb-4">Built to be watched, not just read</h2>
+        <p class="reveal reveal-delay-2 text-paper/70">
+          Short-form training and mindset content produced weekly — the same system that fills the coaching calendar.
+        </p>
+      </div>
+      <a href="#" class="reveal btn-outline px-6 py-3 rounded-full font-semibold whitespace-nowrap">View Full Library</a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Media card template x6 -->
+      <div class="reveal media-card" style="background-image:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=80');">
+        <div class="media-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="media-caption">
+          <span class="media-tag">Physical</span>
+          <h3 class="font-semibold">The 12-Minute Fighter's Finisher</h3>
+          <p class="text-xs text-paper/60">2.1M views · Reels</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 media-card" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80');">
+        <div class="media-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="media-caption">
+          <span class="media-tag">Mindset</span>
+          <h3 class="font-semibold">Why Motivation Is a Trap</h3>
+          <p class="text-xs text-paper/60">890K views · YouTube Shorts</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 media-card" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80');">
+        <div class="media-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="media-caption">
+          <span class="media-tag">Learning</span>
+          <h3 class="font-semibold">My 20-Minute Daily Reading System</h3>
+          <p class="text-xs text-paper/60">410K views · TikTok</p>
+        </div>
+      </div>
+
+      <div class="reveal media-card" style="background-image:url('https://images.unsplash.com/photo-1581009137042-c552e485697a?auto=format&fit=crop&w=800&q=80');">
+        <div class="media-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="media-caption">
+          <span class="media-tag">Physical</span>
+          <h3 class="font-semibold">Kickboxing Conditioning, No Gym Needed</h3>
+          <p class="text-xs text-paper/60">1.4M views · Reels</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 media-card" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80');">
+        <div class="media-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="media-caption">
+          <span class="media-tag">Mindset</span>
+          <h3 class="font-semibold">Breathwork Before High-Stakes Meetings</h3>
+          <p class="text-xs text-paper/60">670K views · YouTube Shorts</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 media-card" style="background-image:url('https://images.unsplash.com/photo-1434596922112-19c563067271?auto=format&fit=crop&w=800&q=80');">
+        <div class="media-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="media-caption">
+          <span class="media-tag">Learning</span>
+          <h3 class="font-semibold">Client Transformation: 90 Days In</h3>
+          <p class="text-xs text-paper/60">2.6M views · TikTok</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+<section id="testimonials" class="py-24 sm:py-32 px-5 sm:px-8">
+  <div class="max-w-4xl mx-auto text-center mb-14">
+    <p class="reveal text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-4">Results</p>
+    <h2 class="reveal reveal-delay-1 font-display text-3xl sm:text-4xl">Real clients. Real shifts.</h2>
+  </div>
+
+  <div class="max-w-3xl mx-auto reveal reveal-delay-2">
+    <div class="overflow-hidden">
+      <div id="carousel-track" class="carousel-track">
+
+        <!-- Slide 1 -->
+        <div class="carousel-slide px-2">
+          <div class="bg-ink-2 border border-line rounded-2xl p-8 sm:p-10 text-center">
+            <svg class="w-8 h-8 text-lime mx-auto mb-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5a2.33 2.33 0 012.33-2.33V6zm10 0A5.17 5.17 0 0012 11.17V18h6.83v-6.83H15.5a2.33 2.33 0 012.33-2.33V6z"/></svg>
+            <p class="text-lg sm:text-xl text-paper/90 leading-relaxed mb-6">
+              "I lost 24 lbs, but the real win was mental. I used to spiral before every big presentation.
+              Six months into Kavexiron's 1:1 program, I walk into board meetings the same way I walk into a sparring round — calm."
+            </p>
+            <p class="font-semibold">Daniela Marsh</p>
+            <p class="text-sm text-paper/60">Operations Director — lost 24 lbs, 1:1 Coaching client</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide px-2">
+          <div class="bg-ink-2 border border-line rounded-2xl p-8 sm:p-10 text-center">
+            <svg class="w-8 h-8 text-lime mx-auto mb-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5a2.33 2.33 0 012.33-2.33V6zm10 0A5.17 5.17 0 0012 11.17V18h6.83v-6.83H15.5a2.33 2.33 0 012.33-2.33V6z"/></svg>
+            <p class="text-lg sm:text-xl text-paper/90 leading-relaxed mb-6">
+              "The Group Program gave me the accountability I'd failed to build alone for a decade.
+              I finally finished something — a 70km trail race — and rebuilt a daily reading habit I'd dropped since college."
+            </p>
+            <p class="font-semibold">Marcus Oduya</p>
+            <p class="text-sm text-paper/60">Software Engineer — finished first ultramarathon, Group Program</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide px-2">
+          <div class="bg-ink-2 border border-line rounded-2xl p-8 sm:p-10 text-center">
+            <svg class="w-8 h-8 text-lime mx-auto mb-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5a2.33 2.33 0 012.33-2.33V6zm10 0A5.17 5.17 0 0012 11.17V18h6.83v-6.83H15.5a2.33 2.33 0 012.33-2.33V6z"/></svg>
+            <p class="text-lg sm:text-xl text-paper/90 leading-relaxed mb-6">
+              "I bought the Self-Paced Course expecting another workout PDF. Instead I got a system —
+              training, breathwork, and a weekly learning sprint — that I still run 14 months later. Best $249 I've spent."
+            </p>
+            <p class="font-semibold">Priya Chandrasekaran</p>
+            <p class="text-sm text-paper/60">Freelance Designer — Self-Paced Course graduate</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-6 mt-8">
+      <button id="carousel-prev" class="carousel-arrow" aria-label="Previous testimonial">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div id="carousel-dots" class="flex items-center gap-2"></div>
+      <button id="carousel-next" class="carousel-arrow" aria-label="Next testimonial">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     INSTAGRAM STRIP
+========================================================= -->
+<section class="py-20 px-5 sm:px-8 bg-ink-2/40 border-y border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="reveal text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-3">Follow Along</p>
+      <h2 class="reveal reveal-delay-1 font-display text-2xl sm:text-3xl mb-2">@kavexiron</h2>
+      <p class="reveal reveal-delay-2 text-paper/60 text-sm">Daily training clips, mindset notes, and behind-the-scenes coaching</p>
+    </div>
+
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
+      <a href="#" class="reveal insta-card" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=70');">
+        <div class="insta-overlay"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v2a5 5 0 0010 0V7a5 5 0 00-5-5z"/></svg></div>
+      </a>
+      <a href="#" class="reveal reveal-delay-1 insta-card" style="background-image:url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=400&q=70');">
+        <div class="insta-overlay"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v2a5 5 0 0010 0V7a5 5 0 00-5-5z"/></svg></div>
+      </a>
+      <a href="#" class="reveal reveal-delay-2 insta-card" style="background-image:url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=400&q=70');">
+        <div class="insta-overlay"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v2a5 5 0 0010 0V7a5 5 0 00-5-5z"/></svg></div>
+      </a>
+      <a href="#" class="reveal insta-card" style="background-image:url('https://images.unsplash.com/photo-1583454155184-870a1f63aebc?auto=format&fit=crop&w=400&q=70');">
+        <div class="insta-overlay"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v2a5 5 0 0010 0V7a5 5 0 00-5-5z"/></svg></div>
+      </a>
+      <a href="#" class="reveal reveal-delay-1 insta-card" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&q=70');">
+        <div class="insta-overlay"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v2a5 5 0 0010 0V7a5 5 0 00-5-5z"/></svg></div>
+      </a>
+      <a href="#" class="reveal reveal-delay-2 insta-card" style="background-image:url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=400&q=70');">
+        <div class="insta-overlay"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 00-5 5v2a5 5 0 0010 0V7a5 5 0 00-5-5z"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT / BOOKING FORM
+========================================================= -->
+<section id="contact" class="py-24 sm:py-32 px-5 sm:px-8">
+  <div class="max-w-5xl mx-auto grid lg:grid-cols-5 gap-12">
+
+    <div class="lg:col-span-2 reveal">
+      <p class="text-xs uppercase tracking-[0.2em] text-lime font-semibold mb-4">Get Started</p>
+      <h2 class="font-display text-3xl sm:text-4xl mb-5 leading-tight">Book your free discovery call</h2>
+      <p class="text-paper/70 mb-8 leading-relaxed">
+        15 minutes. No pitch deck, no pressure — just a real conversation about where you're at and whether
+        the Kavexiron method is the right fit.
+      </p>
+
+      <ul class="space-y-4 text-sm text-paper/75">
+        <li class="flex gap-3 items-start"><span class="text-lime mt-0.5">✓</span>Response within 24 hours</li>
+        <li class="flex gap-3 items-start"><span class="text-lime mt-0.5">✓</span>No obligation, no hard sell</li>
+        <li class="flex gap-3 items-start"><span class="text-lime mt-0.5">✓</span>Limited 1:1 spots each month</li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-3 reveal reveal-delay-1">
+      <form id="booking-form" class="bg-ink-2 border border-line rounded-2xl p-6 sm:p-8 space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="f-name" class="block text-sm mb-2 text-paper/70">Full name</label>
+            <input id="f-name" name="name" type="text" required placeholder="Jordan Avery" class="field-input w-full rounded-lg px-4 py-3 text-sm">
+          </div>
+          <div>
+            <label for="f-email" class="block text-sm mb-2 text-paper/70">Email</label>
+            <input id="f-email" name="email" type="email" required placeholder="you@email.com" class="field-input w-full rounded-lg px-4 py-3 text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label for="f-goal" class="block text-sm mb-2 text-paper/70">Primary goal</label>
+          <select id="f-goal" name="goal" class="field-input w-full rounded-lg px-4 py-3 text-sm">
+            <option>Physical transformation</option>
+            <option>Mental performance / resilience</option>
+            <option>Habit &amp; learning systems</option>
+            <option>All three — full method</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="f-message" class="block text-sm mb-2 text-paper/70">Tell me about your goal</label>
+          <textarea id="f-message" name="message" rows="4" placeholder="What are you working toward, and what's gotten in the way so far?" class="field-input w-full rounded-lg px-4 py-3 text-sm resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary w-full rounded-full py-4 font-semibold">Request My Free Call</button>
+        <p class="text-xs text-paper/40 text-center">This is a demo form — no data is sent or stored anywhere.</p>
+      </form>
+
+      <div id="form-success" class="bg-ink-2 border border-lime/40 rounded-2xl p-8 sm:p-10 text-center flex-col items-center">
+        <div class="w-14 h-14 rounded-full bg-lime/15 text-lime flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3 class="font-display text-2xl mb-3">Request received</h3>
+        <p class="text-paper/70 mb-6">Thanks — this demo confirms your booking form works end-to-end. In production this would trigger an email + calendar invite.</p>
+        <button id="form-reset-btn" class="btn-outline px-6 py-3 rounded-full font-semibold">Submit Another</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="border-t border-line pt-16 pb-8 px-5 sm:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+      <div>
+        <a href="#top" class="flex items-center gap-2 mb-4">
+          <span class="w-9 h-9 rounded-lg bg-lime flex items-center justify-center font-display text-ink text-lg">K</span>
+          <span class="font-accent text-2xl tracking-widest">KAVEXIRON</span>
+        </a>
+        <p class="text-paper/60 text-sm leading-relaxed max-w-xs">
+          Mind &amp; body performance coaching. Train the system, not just the symptom.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wide text-paper/50">Explore</h4>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="#about" class="hover:text-lime transition-colors">About</a></li>
+          <li><a href="#pillars" class="hover:text-lime transition-colors">The Method</a></li>
+          <li><a href="#programs" class="hover:text-lime transition-colors">Programs</a></li>
+          <li><a href="#media" class="hover:text-lime transition-colors">Content</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wide text-paper/50">Programs</h4>
+        <ul class="space-y-3 text-sm text-paper/70">
+          <li><a href="#programs" class="hover:text-lime transition-colors">1:1 Coaching</a></li>
+          <li><a href="#programs" class="hover:text-lime transition-colors">Group Program</a></li>
+          <li><a href="#programs" class="hover:text-lime transition-colors">Self-Paced Course</a></li>
+          <li><a href="#contact" class="hover:text-lime transition-colors">Book a Free Call</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4 text-sm uppercase tracking-wide text-paper/50">Connect</h4>
+        <div class="flex gap-3 mb-5">
+          <a href="#" class="social-ico" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.97.24 2.43.4.6.23 1.03.5 1.48.95.45.45.72.88.95 1.48.16.46.35 1.26.4 2.43.06 1.25.07 1.65.07 4.85s-.01 3.6-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4 4 0 01-.95 1.48 4 4 0 01-1.48.95c-.46.16-1.26.35-2.43.4-1.25.06-1.65.07-4.85.07s-3.6-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4 4 0 01-1.48-.95 4 4 0 01-.95-1.48c-.16-.46-.35-1.26-.4-2.43C2.21 15.6 2.2 15.2 2.2 12s.01-3.6.07-4.85c.05-1.17.24-1.97.4-2.43.23-.6.5-1.03.95-1.48.45-.45.88-.72 1.48-.95.46-.16 1.26-.35 2.43-.4C8.4 2.21 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.73.07-.96.04-1.48.2-1.83.34-.46.18-.79.39-1.13.74-.35.34-.56.67-.74 1.13-.14.35-.3.87-.34 1.83C3.17 8.5 3.16 8.86 3.16 12s.01 3.5.07 4.73c.04.96.2 1.48.34 1.83.18.46.39.79.74 1.13.34.35.67.56 1.13.74.35.14.87.3 1.83.34 1.23.06 1.59.07 4.73.07s3.5-.01 4.73-.07c.96-.04 1.48-.2 1.83-.34.46-.18.79-.39 1.13-.74.35-.34.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.23.07-1.59.07-4.73s-.01-3.5-.07-4.73c-.04-.96-.2-1.48-.34-1.83a3 3 0 00-.74-1.13 3 3 0 00-1.13-.74c-.35-.14-.87-.3-1.83-.34C15.5 4.01 15.14 4 12 4zm0 3.6a4.4 4.4 0 110 8.8 4.4 4.4 0 010-8.8zm0 1.8a2.6 2.6 0 100 5.2 2.6 2.6 0 000-5.2zm5.6-2a1.03 1.03 0 110 2.05 1.03 1.03 0 010-2.05z"/></svg>
+          </a>
+          <a href="#" class="social-ico" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 7.2a3 3 0 00-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-9.4.5A3 3 0 00.5 7.2 31 31 0 000 12a31 31 0 00.5 4.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-4.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg>
+          </a>
+          <a href="#" class="social-ico" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.5 2h-3.1v13.6a2.9 2.9 0 11-2.9-3c.2 0 .5 0 .7.07V9.5a6 6 0 00-.7-.04 6 6 0 103.9 10.56V9.1a8 8 0 004.8 1.6V7.6a4.8 4.8 0 01-2.7-5.6z"/></svg>
+          </a>
+          <a href="#" class="social-ico" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12V21h-4v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V21h-4V9z"/></svg>
+          </a>
+        </div>
+        <p class="text-paper/50 text-sm">hello@kavexiron.com</p>
+      </div>
+    </div>
+
+    <div class="border-t border-line pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-paper/40">
+      <p>&copy; <span id="year"></span> Kavexiron Coaching. All rights reserved.</p>
+      <p>Fictional demo brand · Built as a freelance portfolio sample.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

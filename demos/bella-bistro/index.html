@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Portfolio demo project by Arya Kavexiron — fictional client, built to showcase restaurant/booking website design skills -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella Bistro | Modern Italian-Mediterranean Restaurant</title>
+<meta name="description" content="Bella Bistro is a modern Italian-Mediterranean restaurant serving seasonal, handmade dishes in the heart of the city. Reserve your table online today.">
+
+<!-- Favicon (inline SVG, no external file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231f3d2b'/%3E%3Ctext x='50' y='66' font-size='54' text-anchor='middle' fill='%23c9a24b' font-family='Georgia,serif'%3EB%3C/text%3E%3C/svg%3E">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          forest: { DEFAULT: '#1f3d2b', dark: '#142a1d' },
+          burgundy: { DEFAULT: '#6e1423', dark: '#4d0e18' },
+          cream: { DEFAULT: '#faf4e9', dark: '#f0e6d2' },
+          gold: { DEFAULT: '#c9a24b', light: '#e1c585' }
+        },
+        fontFamily: {
+          display: ['"Playfair Display"', 'serif'],
+          sans: ['Inter', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+
+<!-- Custom styles -->
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-cream text-[#26231f] antialiased">
+
+<!-- ===================== HEADER / NAV ===================== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-20">
+    <a href="#home" class="font-display text-2xl sm:text-3xl text-cream tracking-wide">
+      Bella <span class="text-gold">Bistro</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-10">
+      <a href="#about" class="nav-link text-cream/90 hover:text-gold">Our Story</a>
+      <a href="#menu" class="nav-link text-cream/90 hover:text-gold">Menu</a>
+      <a href="#gallery" class="nav-link text-cream/90 hover:text-gold">Gallery</a>
+      <a href="#testimonials" class="nav-link text-cream/90 hover:text-gold">Reviews</a>
+      <a href="#location" class="nav-link text-cream/90 hover:text-gold">Visit Us</a>
+    </nav>
+
+    <a href="#reserve" class="hidden lg:inline-flex btn-gold text-sm">Reserve a Table</a>
+
+    <!-- Mobile toggle -->
+    <button id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu"
+      class="lg:hidden text-cream p-2">
+      <svg id="icon-open" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <div id="mobile-menu" class="lg:hidden bg-forest-dark/98 backdrop-blur border-t border-white/10">
+    <nav class="flex flex-col px-6 py-4 gap-1">
+      <a href="#about" class="py-3 text-cream/90 border-b border-white/10">Our Story</a>
+      <a href="#menu" class="py-3 text-cream/90 border-b border-white/10">Menu</a>
+      <a href="#gallery" class="py-3 text-cream/90 border-b border-white/10">Gallery</a>
+      <a href="#testimonials" class="py-3 text-cream/90 border-b border-white/10">Reviews</a>
+      <a href="#location" class="py-3 text-cream/90 border-b border-white/10">Visit Us</a>
+      <a href="#reserve" class="mt-4 btn-gold text-center text-sm">Reserve a Table</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="home" class="hero" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');">
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream">
+    <p class="eyebrow on-dark mb-5">Est. 2014 &middot; Downtown Riverside District</p>
+    <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-semibold leading-tight">
+      Handmade Italian,<br class="hidden sm:block"> Rooted in the Mediterranean
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-cream/85 max-w-2xl mx-auto">
+      Seasonal pastas, wood-fired mains, and a wine list built around small Italian producers —
+      served in a warm, art-filled dining room in the heart of the city.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#reserve" class="btn-gold">Reserve a Table</a>
+      <a href="#menu" class="btn-outline">View Our Menu</a>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</section>
+
+<!-- ===================== ABOUT / STORY ===================== -->
+<section id="about" class="py-24 sm:py-32 bg-cream">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <p class="eyebrow mb-4">Our Story</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-forest-dark mb-6">A family table,<br>open to everyone</h2>
+      <p class="text-lg text-[#44403a] leading-relaxed mb-5">
+        Bella Bistro began in 2014 when chef <strong>Marco De Luca</strong> and his sister
+        <strong>Giulia</strong> set out to recreate the long, unhurried meals of their grandmother's
+        kitchen in Puglia — handmade pasta, slow-braised ragùs, and vegetables sourced the same morning
+        from the Saturday farmers' market.
+      </p>
+      <p class="text-lg text-[#44403a] leading-relaxed mb-8">
+        Twelve years later, the same wood-fired oven still anchors the kitchen, our pasta is still
+        rolled by hand every morning, and the restaurant has grown into a neighborhood gathering place —
+        equally suited to a quiet anniversary dinner or a long Sunday lunch with the whole family.
+      </p>
+      <div class="grid grid-cols-3 gap-6 border-t border-gold/40 pt-8">
+        <div>
+          <p class="font-display text-3xl text-burgundy">12+</p>
+          <p class="text-sm text-[#6b6659] mt-1">Years serving the city</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl text-burgundy">100%</p>
+          <p class="text-sm text-[#6b6659] mt-1">Pasta made in-house</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl text-burgundy">4.9★</p>
+          <p class="text-sm text-[#6b6659] mt-1">Average guest rating</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2 grid grid-cols-2 gap-5">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+           alt="Chef plating a fresh pasta dish in the Bella Bistro kitchen"
+           class="rounded-xl shadow-xl w-full h-72 object-cover mt-10">
+      <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=800&q=80"
+           alt="Bella Bistro's warm, art-filled dining room"
+           class="rounded-xl shadow-xl w-full h-72 object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MENU ===================== -->
+<section id="menu" class="py-24 sm:py-32 bg-cream-dark">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <p class="eyebrow mb-4">The Menu</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-forest-dark">Seasonal &amp; Hand-Crafted</h2>
+      <div class="flex justify-center my-6"><span class="divider-leaf"></span></div>
+      <p class="text-[#6b6659] max-w-xl mx-auto">
+        Our menu changes with the seasons. Here is a sampling of the dishes our guests return for again and again.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex justify-center flex-wrap gap-3 mb-12 reveal">
+      <button class="menu-tab active px-6 py-2.5 rounded-full border border-forest/20 text-forest-dark font-medium" data-target="panel-starters">Starters</button>
+      <button class="menu-tab px-6 py-2.5 rounded-full border border-forest/20 text-forest-dark font-medium" data-target="panel-mains">Mains</button>
+      <button class="menu-tab px-6 py-2.5 rounded-full border border-forest/20 text-forest-dark font-medium" data-target="panel-desserts">Desserts</button>
+    </div>
+
+    <!-- Starters -->
+    <div id="panel-starters" class="menu-panel active reveal">
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Burrata al Pomodoro</h3>
+          <p class="text-[#6b6659] mt-1">Creamy burrata, slow-roasted cherry tomatoes, basil oil, grilled sourdough</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$16</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Polpo alla Griglia</h3>
+          <p class="text-[#6b6659] mt-1">Char-grilled octopus, white bean purée, Calabrian chili, lemon</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$19</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Carpaccio di Manzo</h3>
+          <p class="text-[#6b6659] mt-1">Thin-sliced beef tenderloin, arugula, shaved parmesan, truffle vinaigrette</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$18</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Arancini della Casa</h3>
+          <p class="text-[#6b6659] mt-1">Saffron risotto fritters, mozzarella, slow-cooked ragù, pecorino</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$14</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Zuppa di Giorno</h3>
+          <p class="text-[#6b6659] mt-1">Chef's daily seasonal soup, finished tableside with extra-virgin olive oil</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$12</span>
+      </div>
+    </div>
+
+    <!-- Mains -->
+    <div id="panel-mains" class="menu-panel reveal">
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Tagliatelle al Tartufo</h3>
+          <p class="text-[#6b6659] mt-1">Fresh egg tagliatelle, black truffle, brown butter, aged parmesan</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$28</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Branzino al Forno</h3>
+          <p class="text-[#6b6659] mt-1">Whole roasted Mediterranean sea bass, salsa verde, charred lemon, fennel</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$34</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Osso Buco alla Milanese</h3>
+          <p class="text-[#6b6659] mt-1">Braised veal shank, saffron risotto, gremolata</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$38</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Risotto ai Funghi Porcini</h3>
+          <p class="text-[#6b6659] mt-1">Carnaroli rice, wild porcini, white wine, aged parmesan, chive oil</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$26</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Pizza al Fuoco di Legna</h3>
+          <p class="text-[#6b6659] mt-1">Wood-fired crust, San Marzano tomato, buffalo mozzarella, Calabrian honey</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$22</span>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div id="panel-desserts" class="menu-panel reveal">
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Tiramisù della Nonna</h3>
+          <p class="text-[#6b6659] mt-1">Espresso-soaked ladyfingers, mascarpone cream, cocoa, Marsala</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$11</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Panna Cotta ai Frutti di Bosco</h3>
+          <p class="text-[#6b6659] mt-1">Vanilla bean panna cotta, warm mixed berry compote</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$10</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Torta di Cioccolato Fondente</h3>
+          <p class="text-[#6b6659] mt-1">Warm flourless dark chocolate cake, orange zest, pistachio gelato</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$12</span>
+      </div>
+      <div class="menu-item flex justify-between gap-6 py-6">
+        <div>
+          <h3 class="font-display text-xl text-forest-dark">Cannoli Siciliani</h3>
+          <p class="text-[#6b6659] mt-1">Crisp shells, sweet ricotta, candied orange, chocolate chips, pistachio</p>
+        </div>
+        <span class="font-display text-lg text-burgundy whitespace-nowrap">$10</span>
+      </div>
+    </div>
+
+    <p class="text-center text-sm text-[#8a8372] mt-10 reveal">
+      A tasting menu and full wine &amp; cocktail list are available upon request. Please let your server know of any allergies.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== RESERVATION ===================== -->
+<section id="reserve" class="py-24 sm:py-32 bg-forest-dark relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=60')] bg-cover bg-center" aria-hidden="true"></div>
+  <div class="max-w-3xl mx-auto px-6 relative reveal">
+    <div class="text-center mb-12">
+      <p class="eyebrow on-dark mb-4">Book a Table</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream">Reserve Your Evening</h2>
+      <div class="flex justify-center my-6"><span class="divider-leaf"></span></div>
+      <p class="text-cream/75 max-w-lg mx-auto">
+        Reserve online in under a minute, or call us directly at <a href="tel:+15551234567" class="text-gold-light underline underline-offset-2">(555) 123-4567</a>.
+      </p>
+    </div>
+
+    <form id="reservation-form" class="bg-cream/5 border border-cream/10 rounded-2xl p-6 sm:p-10 backdrop-blur-sm grid sm:grid-cols-2 gap-6" novalidate>
+      <div class="sm:col-span-2">
+        <label for="res-name" class="field-label">Full Name</label>
+        <input id="res-name" name="name" type="text" class="field-input" placeholder="Jane Appleseed" required>
+      </div>
+      <div>
+        <label for="res-email" class="field-label">Email Address</label>
+        <input id="res-email" name="email" type="email" class="field-input" placeholder="jane@email.com" required>
+      </div>
+      <div>
+        <label for="res-phone" class="field-label">Phone Number</label>
+        <input id="res-phone" name="phone" type="tel" class="field-input" placeholder="(555) 987-6543" required>
+      </div>
+      <div>
+        <label for="res-date" class="field-label">Date</label>
+        <input id="res-date" name="date" type="date" class="field-input" required>
+      </div>
+      <div>
+        <label for="res-time" class="field-label">Time</label>
+        <select id="res-time" name="time" class="field-input" required>
+          <option value="" disabled selected>Select a time</option>
+          <option>5:00 PM</option>
+          <option>5:30 PM</option>
+          <option>6:00 PM</option>
+          <option>6:30 PM</option>
+          <option>7:00 PM</option>
+          <option>7:30 PM</option>
+          <option>8:00 PM</option>
+          <option>8:30 PM</option>
+          <option>9:00 PM</option>
+        </select>
+      </div>
+      <div>
+        <label for="res-guests" class="field-label">Party Size</label>
+        <select id="res-guests" name="guests" class="field-input" required>
+          <option value="" disabled selected>Number of guests</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+          <option>5</option><option>6</option><option>7</option><option>8+</option>
+        </select>
+      </div>
+      <div>
+        <label for="res-occasion" class="field-label">Occasion (optional)</label>
+        <select id="res-occasion" name="occasion" class="field-input">
+          <option value="" selected>None in particular</option>
+          <option>Birthday</option>
+          <option>Anniversary</option>
+          <option>Business Dinner</option>
+          <option>Date Night</option>
+        </select>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="res-notes" class="field-label">Special Requests (optional)</label>
+        <textarea id="res-notes" name="notes" rows="3" class="field-input" placeholder="Dietary restrictions, seating preference, etc."></textarea>
+      </div>
+      <div class="sm:col-span-2 mt-2">
+        <button type="submit" class="btn-gold w-full text-base">Confirm Reservation</button>
+        <p class="text-xs text-cream/50 text-center mt-4">
+          This is a demo form for portfolio purposes — no reservation is actually sent.
+        </p>
+      </div>
+    </form>
+
+    <!-- Success state -->
+    <div id="reservation-success" class="flex-col items-center text-center bg-cream/5 border border-gold/40 rounded-2xl p-10 sm:p-14">
+      <svg class="w-14 h-14 text-gold mb-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <h3 class="font-display text-2xl sm:text-3xl text-cream mb-3">Thank you, <span id="success-name">friend</span>!</h3>
+      <p id="success-details" class="text-cream/75 max-w-md"></p>
+      <button id="new-reservation-btn" class="btn-outline mt-8 text-sm">Make Another Reservation</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery" class="py-24 sm:py-32 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <p class="eyebrow mb-4">Gallery</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-forest-dark">A Taste of the Room</h2>
+      <div class="flex justify-center my-6"><span class="divider-leaf"></span></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 auto-rows-[180px] sm:auto-rows-[220px]">
+      <div class="gallery-item reveal row-span-2 col-span-1">
+        <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=80" alt="Fresh handmade pasta dish with herbs">
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Wood-fired pizza fresh from the oven">
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80" alt="Rustic plated Italian dish with garnish">
+      </div>
+      <div class="gallery-item reveal reveal-delay-3 row-span-2">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Elegant restaurant interior with warm lighting">
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" alt="Glass of red wine on a set table">
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=800&q=80" alt="Dessert plated with berries and mint">
+      </div>
+      <div class="gallery-item reveal reveal-delay-2 col-span-2 md:col-span-1">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Chef preparing a dish in the open kitchen">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials" class="py-24 sm:py-32 bg-burgundy-dark relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="text-center mb-16 reveal">
+      <p class="eyebrow on-dark mb-4">Guest Reviews</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream">What Our Guests Say</h2>
+      <div class="flex justify-center my-6"><span class="divider-leaf"></span></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal bg-cream/5 border border-cream/10 rounded-2xl p-8">
+        <span class="quote-mark text-5xl text-gold">&ldquo;</span>
+        <p class="text-cream/85 mt-2 mb-6 leading-relaxed">
+          The truffle tagliatelle is worth the trip across town alone. Service was warm without
+          being stiff, and the room has this effortless, romantic glow in the evening. Our new
+          anniversary spot, no question.
+        </p>
+        <div class="flex items-center gap-1 text-gold mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="font-display text-cream">Rachel M.</p>
+        <p class="text-sm text-cream/50">Verified Diner</p>
+      </div>
+
+      <div class="reveal reveal-delay-1 bg-cream/5 border border-cream/10 rounded-2xl p-8">
+        <span class="quote-mark text-5xl text-gold">&ldquo;</span>
+        <p class="text-cream/85 mt-2 mb-6 leading-relaxed">
+          Booked online in under a minute and got a confirmation right away — refreshing for a
+          restaurant this good. The branzino was perfectly cooked and the staff clearly knew the
+          wine list inside and out.
+        </p>
+        <div class="flex items-center gap-1 text-gold mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="font-display text-cream">David O.</p>
+        <p class="text-sm text-cream/50">Verified Diner</p>
+      </div>
+
+      <div class="reveal reveal-delay-2 bg-cream/5 border border-cream/10 rounded-2xl p-8">
+        <span class="quote-mark text-5xl text-gold">&ldquo;</span>
+        <p class="text-cream/85 mt-2 mb-6 leading-relaxed">
+          We brought the whole family, including two picky teenagers, and everyone left happy.
+          The arancini disappeared in seconds. Cozy, unpretentious, and genuinely delicious.
+        </p>
+        <div class="flex items-center gap-1 text-gold mb-2" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="font-display text-cream">Priya S.</p>
+        <p class="text-sm text-cream/50">Verified Diner</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOCATION / HOURS / MAP ===================== -->
+<section id="location" class="py-24 sm:py-32 bg-cream">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-start">
+    <div class="reveal">
+      <p class="eyebrow mb-4">Visit Us</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-forest-dark mb-8">Find Us in the Riverside District</h2>
+
+      <div class="space-y-8">
+        <div class="flex gap-4">
+          <svg class="w-6 h-6 text-burgundy flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+          </svg>
+          <div>
+            <h3 class="font-display text-lg text-forest-dark mb-1">Address</h3>
+            <p class="text-[#6b6659]">482 Riverside Avenue<br>Downtown Arts District<br>Springfield, ST 49201</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <svg class="w-6 h-6 text-burgundy flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <h3 class="font-display text-lg text-forest-dark mb-1">Hours</h3>
+            <div class="text-[#6b6659] space-y-0.5">
+              <p class="flex justify-between gap-10 max-w-xs"><span>Tue – Thu</span><span>5:00 PM – 10:00 PM</span></p>
+              <p class="flex justify-between gap-10 max-w-xs"><span>Fri – Sat</span><span>5:00 PM – 11:00 PM</span></p>
+              <p class="flex justify-between gap-10 max-w-xs"><span>Sunday</span><span>12:00 PM – 9:00 PM</span></p>
+              <p class="flex justify-between gap-10 max-w-xs"><span>Monday</span><span>Closed</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <svg class="w-6 h-6 text-burgundy flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a1.5 1.5 0 001.5-1.5v-3.379a1.5 1.5 0 00-1.06-1.436l-4.218-1.3a1.5 1.5 0 00-1.567.44l-1.187 1.407a12.04 12.04 0 01-5.516-5.516l1.407-1.187a1.5 1.5 0 00.44-1.567l-1.3-4.218A1.5 1.5 0 008.63 2.25H5.25a1.5 1.5 0 00-1.5 1.5v3z"/>
+          </svg>
+          <div>
+            <h3 class="font-display text-lg text-forest-dark mb-1">Contact</h3>
+            <p class="text-[#6b6659]">
+              <a href="tel:+15551234567" class="hover:text-burgundy">(555) 123-4567</a><br>
+              <a href="mailto:hello@bellabistro.example" class="hover:text-burgundy">hello@bellabistro.example</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-forest/10">
+        <iframe
+          class="map-frame w-full h-[420px]"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12096.470442831274!2d-122.41941558459473!3d37.77492951198079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064b42e5a05%3A0x1f0fb77fba4a7c1a!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Bella Bistro's location"
+          style="border:0;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-forest-dark pt-20 pb-8">
+  <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-14">
+    <div>
+      <a href="#home" class="font-display text-2xl text-cream">Bella <span class="text-gold">Bistro</span></a>
+      <p class="text-cream/60 mt-4 leading-relaxed">
+        Modern Italian-Mediterranean cooking, handmade pasta, and a warm room in the heart of the city.
+      </p>
+      <div class="flex gap-3 mt-6">
+        <a href="#" class="social-icon" aria-label="Bella Bistro on Instagram">
+          <svg class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Bella Bistro on Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Bella Bistro on X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-7l-5.5-6.7L4.1 22H1l8.1-9.3L1 2h7.2l5 6.1L18.9 2zm-1.2 18h1.7L7.4 4H5.6l12.1 16z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Bella Bistro on Yelp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 7v5l3 2"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-gold-light font-display text-lg mb-4">Explore</h4>
+      <ul class="space-y-2 text-cream/60">
+        <li><a href="#about" class="hover:text-gold-light">Our Story</a></li>
+        <li><a href="#menu" class="hover:text-gold-light">Menu</a></li>
+        <li><a href="#gallery" class="hover:text-gold-light">Gallery</a></li>
+        <li><a href="#testimonials" class="hover:text-gold-light">Reviews</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-gold-light font-display text-lg mb-4">Visit</h4>
+      <ul class="space-y-2 text-cream/60">
+        <li><a href="#reserve" class="hover:text-gold-light">Reservations</a></li>
+        <li><a href="#location" class="hover:text-gold-light">Hours &amp; Directions</a></li>
+        <li>482 Riverside Avenue</li>
+        <li>Springfield, ST 49201</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-gold-light font-display text-lg mb-4">Contact</h4>
+      <ul class="space-y-2 text-cream/60">
+        <li><a href="tel:+15551234567" class="hover:text-gold-light">(555) 123-4567</a></li>
+        <li><a href="mailto:hello@bellabistro.example" class="hover:text-gold-light">hello@bellabistro.example</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-cream/45">
+    <p>&copy; <span id="current-year">2026</span> Bella Bistro. All rights reserved.</p>
+    <p>Fictional portfolio demo — designed &amp; built by Arya Kavexiron.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
